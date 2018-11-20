@@ -6,6 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".MemberListActivity">
 
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="氏名(カナ) Text"
+        android:id="@+id/kanaRow"
+        android:textSize="30sp"
+        android:layout_weight="5" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="氏名"
+        android:id="@+id/nameRow"
+        android:textSize="30sp"
+        android:layout_weight="5" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="社員番号"
+        android:id="@+id/syabanRow"
+        android:textSize="30sp"
+        android:layout_weight="4" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="参加状況"
+        android:id="@+id/sankaRow"
+        android:textSize="30sp"
+        android:layout_weight="3" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="支払状況"
+        android:id="@+id/moneyRow"
+        android:textSize="30sp"
+        android:layout_weight="3" />
+
     <ListView
         android:id="@+id/MemberList"
         android:layout_width="0dp"
@@ -13,6 +53,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ListView>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
