@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    LotteryMain lotteryMain;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,13 +21,21 @@ public class MainActivity extends AppCompatActivity {
             /** ボタンをクリックした時に呼ばれる */
             @Override
             public void onClick(View v) {
-                String a="fd";
+//                String a="fd";
+//                TextView winNum1=findViewById(R.id.winNum1);
+//                winNum1.setText(a);
+//                TextView winNum2=findViewById(R.id.winNum2);
+//                winNum2.setText(a);
+//                TextView winNum3=findViewById(R.id.winNum3);
+//                winNum3.setText(a);
+
+                int[] nums = lotteryMain.lottery(3);
                 TextView winNum1=findViewById(R.id.winNum1);
-                winNum1.setText(a);
+                winNum1.setText(String.valueOf(nums[0]));
                 TextView winNum2=findViewById(R.id.winNum2);
-                winNum2.setText(a);
+                winNum2.setText(String.valueOf(nums[1]));
                 TextView winNum3=findViewById(R.id.winNum3);
-                winNum3.setText(a);
+                winNum3.setText(String.valueOf(nums[2]));
 
             }
         });
