@@ -1,6 +1,8 @@
 package com.example.bounekai.bounekai;
 
-public class MemberDto {
+import java.io.Serializable;
+
+public class MemberDto implements Serializable {
 
     private int num;
     private String kanaName;
