@@ -17,16 +17,16 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
     private final Context mContext;  //コンテキスト
     public static final String CREATE_TABLE =
             "CREATE TABLE IF NOT EXISTS Member ( " +
-                    "num INTEGER PRIMARY KEY NOT NULL ," +
-                    "kana_name TEXT ," +
-                    "name TEXT ," +
-                    "syain_num TEXT ," +
-                    "lot_num TEXT ," +
-                    "hit_flg INTEGER ," +
-                    "sanka_yotei_flg INTEGER ," +
-                    "sanka_flg INTEGER ," +
-                    "money_flg INTEGER ," +
-                    "hage_flg INTEGER )";
+                    "num INTEGER PRIMARY KEY NOT NULL ," + //通し番号
+                    "kana_name TEXT ," + //ｶﾅ氏名
+                    "name TEXT ," + //氏名
+                    "syain_num TEXT ," + //社員番号
+                    "lot_num TEXT ," + //抽選番号
+                    "hit_flg INTEGER ," + //当選フラグ
+                    "sanka_yotei_flg INTEGER ," + //参加予定フラグ
+                    "sanka_flg INTEGER ," + //参加フラグ
+                    "money_flg INTEGER ," + //徴収フラグ
+                    "hage_flg INTEGER )"; //はげフラグ
 
 
     //コンストラクタ

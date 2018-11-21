@@ -10,8 +10,14 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
+
+    LotteryService lotteryService = new LotteryService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +32,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button lotteryButton = findViewById(R.id.lottery_button);
+        lotteryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Spinner lotteryNumSpinner = findViewById(R.id.lottery_num);
+                TextView lotteryResultTextView = findViewById(R.id.lottery_result);
+                int lotteryTimes = (Integer)lotteryNumSpinner.getSelectedItem();
+                String[] hitNum = lotteryService.lotteryExec(lotteryTimes);
+                String hitNumText = "";
+                for(int i = 0; i < hitNum.length; i++) {
+                    hitNumText = hitNumText + hitNum[i] + " ";
+                }
+                lotteryResultTextView.setText(hitNumText);
+
+            }
+        });
+
     }
 }

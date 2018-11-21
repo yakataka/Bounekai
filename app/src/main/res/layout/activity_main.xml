@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lottery_button"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -17,5 +18,29 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/lottery_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="抽選"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <TextView
+        android:id="@+id/lottery_result"
+        android:layout_width="218dp"
+        android:layout_height="100dp"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <Spinner
+        android:id="@+id/lottery_num"
+        android:layout_width="76dp"
+        android:layout_height="21dp"
+        android:entries="@array/lottery_num_list"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="320dp" />
 
 </android.support.constraint.ConstraintLayout>
