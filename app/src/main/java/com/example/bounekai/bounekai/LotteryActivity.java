@@ -41,9 +41,7 @@ public class LotteryActivity extends AppCompatActivity {
     }
 
     private ArrayList<RosterDto> selectLotteryTarget() {
-
         SQLiteDatabase db = openHelper.getWritableDatabase();
-
         try {
             Cursor cursor;
             cursor = db.query(
@@ -67,7 +65,31 @@ public class LotteryActivity extends AppCompatActivity {
         } finally {
             db.close();
         }
+        return rosterDtoList;
+    }
 
+    private ArrayList<RosterDto> updateLotteryTarget() {
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+//        try {
+//            Cursor cursor;
+//            cursor = db.update(
+//                    WordContract.Words.TABLE_NAME,
+//                    null,
+//                    null,
+//                    null
+//            );
+//            int numRows = cursor.getCount();
+//
+//            cursor.moveToFirst();
+//            for (int i = 0; i < numRows; i++, cursor.moveToNext()) {
+//                RosterDto rosterDto = new RosterDto();
+//                rosterDto.setSyainNum(cursor.getString(3));
+//                rosterDto.setLotNum(cursor.getString(4));
+//                rosterDtoList.add(rosterDto);
+//            }
+//        } finally {
+//            db.close();
+//        }
         return rosterDtoList;
     }
 }
