@@ -29,7 +29,7 @@ public class MyAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public MemberDto getItem(int position) {
         return memberList.get(position);
     }
 

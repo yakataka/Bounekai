@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MemberActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="308dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="66dp"
+        android:text="氏名(カナ)："
+        android:textAlignment="viewEnd"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/kanaText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="308dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="50dp"
+        android:text="氏名(漢字)："
+        android:textAlignment="viewEnd"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/nameText"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="308dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="50dp"
+        android:text="社員番号："
+        android:textAlignment="viewEnd"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/syabanText"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/nameText"
+        android:layout_width="308dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="324dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kanaText" />
+
+    <TextView
+        android:id="@+id/syabanText"
+        android:layout_width="308dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="324dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+    <TextView
+        android:id="@+id/kanaText"
+        android:layout_width="308dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="324dp"
+        android:textSize="30sp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
