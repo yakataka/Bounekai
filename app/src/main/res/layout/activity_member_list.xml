@@ -7,7 +7,7 @@
     tools:context=".MemberListActivity">
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/allbutton"
         android:layout_width="245dp"
         android:layout_height="54dp"
         android:layout_marginStart="90dp"
@@ -17,33 +17,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/disButton"
         android:layout_width="245dp"
         android:layout_height="54dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="3dp"
         android:text="未出席"
-        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintStart_toEndOf="@+id/allbutton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/zumiButton"
         android:layout_width="245dp"
         android:layout_height="54dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="3dp"
         android:text="出席済"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/disButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/kessekiButton"
         android:layout_width="245dp"
         android:layout_height="54dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="3dp"
         android:text="欠席"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/zumiButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout

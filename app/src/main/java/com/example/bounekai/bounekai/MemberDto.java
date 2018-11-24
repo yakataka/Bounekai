@@ -60,6 +60,10 @@ public class MemberDto implements Serializable {
         this.sanka = sanka;
     }
 
+    public int getSankaFlg() {
+        return sanka;
+    }
+
     public String getSanka() {
 
         if(sanka==1){
@@ -74,6 +78,10 @@ public class MemberDto implements Serializable {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public int getMoneyFlg() {
+        return money;
     }
 
     public String getMoney() {
