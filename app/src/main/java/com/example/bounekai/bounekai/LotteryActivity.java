@@ -24,9 +24,9 @@ public class LotteryActivity extends AppCompatActivity {
 
         // 抽選対象取得
         rosterDtoList = selectLotteryTarget();
-        for(int i = 0; i < rosterDtoList.size(); i++) {
-            Log.v("num", rosterDtoList.get(i).getSyainNum());
-        }
+//        for(int i = 0; i < rosterDtoList.size(); i++) {
+//            Log.v("num", rosterDtoList.get(i).getSyainNum());
+//        }
         // シャッフル
         Collections.shuffle(rosterDtoList);
 
@@ -58,7 +58,7 @@ public class LotteryActivity extends AppCompatActivity {
             int numRows = cursor.getCount();
 
             cursor.moveToFirst();
-            for (int i = 0; i < numRows; i++) {
+            for (int i = 0; i < numRows; i++, cursor.moveToNext()) {
                 RosterDto rosterDto = new RosterDto();
                 rosterDto.setSyainNum(cursor.getString(3));
                 rosterDto.setLotNum(cursor.getString(4));
