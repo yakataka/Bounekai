@@ -6,18 +6,152 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--<TextView-->
+        <!--android:id="@+id/lottery_result"-->
+        <!--android:layout_width="218dp"-->
+        <!--android:layout_height="97dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:textAlignment="center"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintHorizontal_bias="0.588"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
     <TextView
-        android:id="@+id/lottery_result"
-        android:layout_width="218dp"
-        android:layout_height="97dp"
+        android:id="@+id/textView10"
+        android:layout_width="500dp"
+        android:layout_height="116dp"
+        android:text="1000"
+        android:textSize="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="1089dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.293">
+        <!--app:layout_constraintTop_toBottomOf="@+id/ChanceLottery">-->
+
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/lottery_result"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView15"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView14"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView13"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView12"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView11"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textVie12"
+                style="@style/tableNumText" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView17"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView18"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView16"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/tableNumText"
+                tools:layout_editor_absoluteX="52dp"
+                tools:layout_editor_absoluteY="130dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/tableNumText" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView19"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView23"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView22"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/tableNumText" />
+
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/tableNumText" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView8"-->
+                <!--style="@style/tableNumText" />-->
+        </TableRow>
+
+
+    </TableLayout>
+
 
 </android.support.constraint.ConstraintLayout>
