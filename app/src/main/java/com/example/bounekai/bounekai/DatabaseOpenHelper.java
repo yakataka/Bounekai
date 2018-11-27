@@ -28,7 +28,6 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
                     "money_flg INTEGER ," + //徴収フラグ
                     "hage_flg INTEGER )"; //はげフラグ
 
-
     //コンストラクタ
     public DatabaseOpenHelper(Context context){
         super(context, DB_NAME, null, DB_VERSION);

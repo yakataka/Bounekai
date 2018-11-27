@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.io.Serializable;
@@ -18,6 +19,7 @@ public class MemberListActivity extends AppCompatActivity {
 
     ListView listView;
     ArrayList<MemberDto> list = new ArrayList<>();
+    MyAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +41,6 @@ public class MemberListActivity extends AppCompatActivity {
                 null,
                 null
         );
-        Log.v("DB確認", "Count:" + cursor.getCount());
-        while (cursor.moveToNext()){
-            int name = cursor.getColumnIndex(WordContract.Words.COL_WORD);
-            String desc = cursor.getString(cursor.getColumnIndex(WordContract.Words.COL_DESCR));
-            Log.v("DB確認", "  Word:" + name + "  Desk:" + desc);
-        }
 
         int numRows = cursor.getCount();
 
@@ -58,9 +54,12 @@ public class MemberListActivity extends AppCompatActivity {
             memberDto.setKanaName(cursor.getString(1));
             memberDto.setName(cursor.getString(2));
             memberDto.setSyaban(cursor.getString(3));
+            memberDto.setLotNum(cursor.getString(4));
+            memberDto.setHit(cursor.getInt(5));
             memberDto.setYotei(cursor.getInt(6));
             memberDto.setSanka(cursor.getInt(7));
             memberDto.setMoney(cursor.getInt(8));
+            memberDto.setHage(cursor.getInt(9));
             list.add(memberDto);
 
             cursor.moveToNext();
@@ -68,8 +67,7 @@ public class MemberListActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.MemberList);
 
-        MyAdapter myAdapter = new MyAdapter(MemberListActivity.this);
-
+        myAdapter = new MyAdapter(MemberListActivity.this);
         myAdapter.setMemberList(list);
         listView.setAdapter(myAdapter);
 
@@ -83,6 +81,64 @@ public class MemberListActivity extends AppCompatActivity {
                 MemberDto info = list.get(position);
                 intent.putExtra("MemberDto", info);
                 startActivity(intent);
+            }
+        });
+
+        Button allButton = findViewById(R.id.allbutton);
+        allButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myAdapter = new MyAdapter(MemberListActivity.this);
+                myAdapter.setMemberList(list);
+                listView.setAdapter(myAdapter);
+            }
+        });
+
+        Button disButton = findViewById(R.id.disButton);
+        disButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<MemberDto> memberList = new ArrayList<>();
+                for (MemberDto member : list) {
+                    if (member.getSankaFlg()==0 & member.getYotei()==1){
+                        memberList.add(member);
+                    }
+                }
+                myAdapter = new MyAdapter(MemberListActivity.this);
+                myAdapter.setMemberList(memberList);
+                listView.setAdapter(myAdapter);
+            }
+        });
+
+        Button zumiButton = findViewById(R.id.zumiButton);
+        zumiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<MemberDto> memberList = new ArrayList<>();
+                for (MemberDto member : list) {
+                    if (member.getSankaFlg()==1){
+                        memberList.add(member);
+                    }
+                }
+                myAdapter = new MyAdapter(MemberListActivity.this);
+                myAdapter.setMemberList(memberList);
+                listView.setAdapter(myAdapter);
+            }
+        });
+
+        Button kessekiButton = findViewById(R.id.kessekiButton);
+        kessekiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<MemberDto> memberList = new ArrayList<>();
+                for (MemberDto member : list) {
+                    if (member.getYotei()==0 & member.getSankaFlg()==0) {
+                        memberList.add(member);
+                    }
+                }
+                myAdapter = new MyAdapter(MemberListActivity.this);
+                myAdapter.setMemberList(memberList);
+                listView.setAdapter(myAdapter);
             }
         });
     }
