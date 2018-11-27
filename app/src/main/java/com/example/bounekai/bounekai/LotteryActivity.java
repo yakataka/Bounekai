@@ -1,5 +1,6 @@
 package com.example.bounekai.bounekai;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,23 +22,40 @@ public class LotteryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lottery);
         String result = "";
+        Intent intent = getIntent();
+        int lottery_times = intent.getIntExtra("LOTTERY_TIMES", 0);
+        String[] hit_num_array = new String[lottery_times];
+        int hageFlg = intent.getIntExtra("HAGE", 0);
+
+        // TODO 開発用
+        updateAllSankaFlg();
 
         // 抽選対象取得
-        rosterDtoList = selectLotteryTarget();
+        if (hageFlg == 1) {
+            // はげフラグonのときのselect文
+        } else {
+            rosterDtoList = selectLotteryTarget();
+        }
 //        for(int i = 0; i < rosterDtoList.size(); i++) {
 //            Log.v("num", rosterDtoList.get(i).getSyainNum());
 //        }
         // シャッフル
         Collections.shuffle(rosterDtoList);
 
-        Intent intent = getIntent();
-        int lottery_times = intent.getIntExtra("LOTTERY_TIMES", 0);
-        for (int i = 0; i < lottery_times; i++) {
-            result = result + rosterDtoList.get(i).getSyainNum() + "  ";
+        try {
+            for (int i = 0; i < lottery_times; i++) {
+                String lottery_result = "winNum" + (i + 1);
+                int viewId = getResources().getIdentifier(lottery_result, "id", getPackageName());
+                TextView lotteryResult = findViewById(viewId);
+                lotteryResult.setText(rosterDtoList.get(i).getLotNum());
+                hit_num_array[i] = rosterDtoList.get(i).getLotNum();
+            }
+        } catch(IndexOutOfBoundsException e) {
+            e.printStackTrace();
         }
 
-        TextView lotteryResult = findViewById(R.id.lottery_result);
-        lotteryResult.setText(result);
+        // 当選フラグ更新
+        updateLotteryTarget(hit_num_array);
     }
 
     private ArrayList<RosterDto> selectLotteryTarget() {
@@ -47,8 +65,8 @@ public class LotteryActivity extends AppCompatActivity {
             cursor = db.query(
                     WordContract.Words.TABLE_NAME,
                     null,
-                    null,
-                    null,
+                    "sanka_flg = ? AND hit_flg = ? AND hage_flg = ?",
+                    new String[]{"1","0","0"},
                     null,
                     null,
                     null
@@ -58,7 +76,6 @@ public class LotteryActivity extends AppCompatActivity {
             cursor.moveToFirst();
             for (int i = 0; i < numRows; i++, cursor.moveToNext()) {
                 RosterDto rosterDto = new RosterDto();
-                rosterDto.setSyainNum(cursor.getString(3));
                 rosterDto.setLotNum(cursor.getString(4));
                 rosterDtoList.add(rosterDto);
             }
@@ -68,28 +85,42 @@ public class LotteryActivity extends AppCompatActivity {
         return rosterDtoList;
     }
 
-    private ArrayList<RosterDto> updateLotteryTarget() {
+    private void updateLotteryTarget(String[] hit_num_array) {
         SQLiteDatabase db = openHelper.getWritableDatabase();
-//        try {
-//            Cursor cursor;
-//            cursor = db.update(
-//                    WordContract.Words.TABLE_NAME,
-//                    null,
-//                    null,
-//                    null
-//            );
-//            int numRows = cursor.getCount();
-//
-//            cursor.moveToFirst();
-//            for (int i = 0; i < numRows; i++, cursor.moveToNext()) {
-//                RosterDto rosterDto = new RosterDto();
-//                rosterDto.setSyainNum(cursor.getString(3));
-//                rosterDto.setLotNum(cursor.getString(4));
-//                rosterDtoList.add(rosterDto);
-//            }
-//        } finally {
-//            db.close();
-//        }
-        return rosterDtoList;
+        try {
+            ContentValues cv = new ContentValues();
+            cv.put("hit_flg", 1);
+            for (int i = 0; i < hit_num_array.length; i++) {
+                db.update(
+                        WordContract.Words.TABLE_NAME,
+                        cv,
+                        "lot_num = ?",
+                        new String[]{hit_num_array[i]}
+                );
+            }
+
+        } finally {
+            db.close();
+        }
+    }
+
+    // 開発用 全参加フラグON
+    private void updateAllSankaFlg() {
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        try {
+            ContentValues cv = new ContentValues();
+            cv.put("sanka_flg", 1);
+            for (int i = 0; i < 126; i++) {
+                cv.put("lot_num", i + 1);
+                db.update(
+                        WordContract.Words.TABLE_NAME,
+                        cv,
+                        "num = ?",
+                        new String[]{String.valueOf(i + 1)}
+                );
+            }
+        } finally {
+            db.close();
+        }
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".MemberActivity">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/winNum15"
         android:layout_width="308dp"
         android:layout_height="66dp"
         android:layout_marginTop="66dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/winNum19"
         android:layout_width="308dp"
         android:layout_height="66dp"
         android:layout_marginTop="50dp"
@@ -26,10 +26,10 @@
         android:textAlignment="viewEnd"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/nameText"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/winNum15" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/winNum20"
         android:layout_width="308dp"
         android:layout_height="66dp"
         android:layout_marginTop="50dp"
@@ -37,7 +37,7 @@
         android:textAlignment="viewEnd"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/syabanText"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/winNum19" />
 
     <TextView
         android:id="@+id/nameText"
@@ -90,7 +90,7 @@
         android:layout_marginTop="66dp"
         android:text="支払済です。"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/winNum20" />
 
     <TextView
         android:id="@+id/textView"

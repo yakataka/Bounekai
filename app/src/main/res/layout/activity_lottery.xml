@@ -54,31 +54,31 @@
 
 
             <TextView
-                android:id="@+id/lottery_result"
+                android:id="@+id/winNum1"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/winNum2"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/winNum3"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/winNum4"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/winNum5"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/winNum6"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textVie12"
+                android:id="@+id/winNum7"
                 style="@style/tableNumText" />
         </TableRow>
 
@@ -87,33 +87,33 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/winNum8"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/winNum9"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/winNum10"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/winNum11"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/winNum12"
                 style="@style/tableNumText"
                 tools:layout_editor_absoluteX="52dp"
                 tools:layout_editor_absoluteY="130dp" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/winNum13"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/winNum14"
                 style="@style/tableNumText" />
         </TableRow>
 
@@ -122,27 +122,27 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/winNum15"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/winNum16"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/winNum17"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/winNum18"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/winNum19"
                 style="@style/tableNumText" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/winNum20"
                 style="@style/tableNumText" />
 
             <!--<TextView-->
