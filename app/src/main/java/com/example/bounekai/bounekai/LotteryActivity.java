@@ -39,7 +39,7 @@ public class LotteryActivity extends AppCompatActivity {
             hit_syain_num[i] = rosterDtoList.get(i).getSyainNum();
         }
 
-        TextView lotteryResult = findViewById(R.id.lottery_result);
+        TextView lotteryResult = findViewById(R.id.textView10);
         lotteryResult.setText(result);
 
         // 当選フラグ更新
