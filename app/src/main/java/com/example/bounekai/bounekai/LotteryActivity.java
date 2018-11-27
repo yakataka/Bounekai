@@ -1,5 +1,6 @@
 package com.example.bounekai.bounekai;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
