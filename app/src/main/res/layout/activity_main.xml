@@ -7,13 +7,13 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/premiumValue"
+    <Spinner
+        android:id="@+id/award"
         android:layout_width="136dp"
         android:layout_height="33dp"
-        android:text="1000"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:entries="@array/award_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintLeft_toLeftOf="parent"

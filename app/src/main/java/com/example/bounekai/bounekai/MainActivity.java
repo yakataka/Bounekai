@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
                 int lotteryTimes = Integer.parseInt((String)lotteryNumSpinner.getSelectedItem());
                 Intent intent = new Intent(getApplication(), LotteryActivity.class);
                 intent.putExtra("LOTTERY_TIMES", lotteryTimes);
+                Spinner AwardSpinner = findViewById(R.id.award);
+                String award = (String)AwardSpinner.getSelectedItem();
+                intent.putExtra("AWARD", award);
                 startActivity(intent);
             }
         });

@@ -27,6 +27,10 @@ public class LotteryActivity extends AppCompatActivity {
         String[] hit_num_array = new String[lottery_times];
         int hageFlg = intent.getIntExtra("HAGE", 0);
 
+        String award = intent.getStringExtra("AWARD");
+        TextView awardTextView = findViewById(R.id.award);
+        awardTextView.setText(award);
+
         // TODO 開発用
         updateAllSankaFlg();
 
