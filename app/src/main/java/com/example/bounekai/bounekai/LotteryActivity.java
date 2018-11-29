@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,20 +18,31 @@ public class LotteryActivity extends AppCompatActivity {
 
     private ArrayList<RosterDto> rosterDtoList = new ArrayList<>();
     private DatabaseOpenHelper openHelper = new DatabaseOpenHelper(this);
+    private int lottery_times;
+    private int hageFlg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lottery);
-        String result = "";
         Intent intent = getIntent();
-        int lottery_times = intent.getIntExtra("LOTTERY_TIMES", 0);
-        String[] hit_num_array = new String[lottery_times];
-        int hageFlg = intent.getIntExtra("HAGE", 0);
+        lottery_times = intent.getIntExtra("LOTTERY_TIMES", 0);
+        hageFlg = intent.getIntExtra("HAGE", 0);
 
         String award = intent.getStringExtra("AWARD");
-        TextView awardTextView = findViewById(R.id.award);
-        awardTextView.setText(award);
+        Button awardButton = findViewById(R.id.award);
+        awardButton.setText(award);
+
+        awardButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lottery();
+            }
+        });
+    }
+
+    private void lottery(){
+        String[] hit_num_array = new String[lottery_times];
 
         // TODO 開発用
         updateAllSankaFlg();
@@ -40,9 +53,7 @@ public class LotteryActivity extends AppCompatActivity {
         } else {
             rosterDtoList = selectLotteryTarget();
         }
-//        for(int i = 0; i < rosterDtoList.size(); i++) {
-//            Log.v("num", rosterDtoList.get(i).getSyainNum());
-//        }
+
         // シャッフル
         Collections.shuffle(rosterDtoList);
 
@@ -51,11 +62,14 @@ public class LotteryActivity extends AppCompatActivity {
                 String lottery_result = "winNum" + (i + 1);
                 int viewId = getResources().getIdentifier(lottery_result, "id", getPackageName());
                 TextView lotteryResult = findViewById(viewId);
+                Thread.sleep(1000);
                 lotteryResult.setText(rosterDtoList.get(i).getLotNum());
                 hit_num_array[i] = rosterDtoList.get(i).getLotNum();
             }
-        } catch(IndexOutOfBoundsException e) {
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
+        } catch (InterruptedException e1) {
+            e1.printStackTrace();
         }
 
         // 当選フラグ更新

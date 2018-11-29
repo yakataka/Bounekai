@@ -19,18 +19,18 @@
         <!--app:layout_constraintHorizontal_bias="0.588"-->
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toTopOf="parent" />-->
-    <TextView
+    <Button
         android:id="@+id/award"
         android:layout_width="500dp"
         android:layout_height="116dp"
-        android:text="1000"
-        android:textSize="100dp"
+        android:gravity="center"
+        android:textSize="80dp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TableLayout
         android:id="@+id/tableLayout"
