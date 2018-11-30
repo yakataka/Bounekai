@@ -37,13 +37,11 @@ public class MemberActivity extends AppCompatActivity {
         //IDを入れる
         final int num = info.getNum();
         where = "num = " + num;
-        //id textView1をt1に当てはめている
+        //id 各textViewに当てはめている
         TextView kanaName = (TextView)findViewById(R.id.kanaText);
-        //id textView1をt2に当てはめている
         TextView name = (TextView)findViewById(R.id.nameText);
-        //id textView1をt3に当てはめている
         TextView syaban = (TextView)findViewById(R.id.syabanText);
-        TextView lotNum = (TextView)findViewById(R.id.lotNumText);
+        TextView lotNum = (TextView)findViewById(R.id.random_num);
 
         //受け取った値を表示
         kanaName.setText(info.getKanaName());
@@ -84,41 +82,15 @@ public class MemberActivity extends AppCompatActivity {
             }
         });
 
-        final Button moneyButton = findViewById(R.id.money_button);
-        moneyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ContentValues cv = new ContentValues();
-                cv.put("money_flg", 1);
-
-                DatabaseOpenHelper openHelper = new DatabaseOpenHelper(getApplication());
-                SQLiteDatabase database = openHelper.getWritableDatabase();
-                database.update(
-                        "Member",
-                        cv,
-                        where,
-                        null
-                );
-                info.setMoney(1);
-                greenButton(moneyButton);
-
-                lotNumCheck();
-            }
-        });
-
         if (info.getSankaFlg() == 1) {
             //リソースからボタンのリソースを取得
             greenButton(sankaButton);
-        }
-        if (info.getMoneyFlg() == 1) {
-            //リソースからボタンのリソースを取得
-            greenButton(moneyButton);
         }
     }
 
     private void lotNumCheck() {
 
-        if (info.getSankaFlg()==1 & info.getMoneyFlg()==1 & info.getLotNum()==null) {
+        if (info.getSankaFlg()==1 & info.getLotNum()==null) {
             DatabaseOpenHelper openHelper = new DatabaseOpenHelper(getApplication());
             SQLiteDatabase database = openHelper.getWritableDatabase();
 
@@ -162,22 +134,6 @@ public class MemberActivity extends AppCompatActivity {
                     null
             );
             info.setLotNum(Integer.toString(randomNum));
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            View view = this.getLayoutInflater().inflate(R.layout.msg_layout, null);
-            TextView bangou = view.findViewById(R.id.random_num);
-            bangou.setText(ranNum);
-            builder.setView(view)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                        // ボタンをクリックしたときの動作
-                            TextView lotNum = (TextView)findViewById(R.id.lotNumText);
-                            lotNum.setText(ranNum);
-
-                        }
-                    });
-            builder.show();
-
         }
     }
 

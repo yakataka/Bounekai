@@ -7,7 +7,7 @@
     tools:context=".MemberActivity">
 
     <TextView
-        android:id="@+id/winNum15"
+        android:id="@+id/kanaView"
         android:layout_width="308dp"
         android:layout_height="66dp"
         android:layout_marginTop="66dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/winNum19"
+        android:id="@+id/nameView"
         android:layout_width="308dp"
         android:layout_height="66dp"
         android:layout_marginTop="50dp"
@@ -26,10 +26,10 @@
         android:textAlignment="viewEnd"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/nameText"
-        app:layout_constraintTop_toBottomOf="@+id/winNum15" />
+        app:layout_constraintTop_toBottomOf="@+id/kanaView" />
 
     <TextView
-        android:id="@+id/winNum20"
+        android:id="@+id/syabanView"
         android:layout_width="308dp"
         android:layout_height="66dp"
         android:layout_marginTop="50dp"
@@ -37,7 +37,7 @@
         android:textAlignment="viewEnd"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/syabanText"
-        app:layout_constraintTop_toBottomOf="@+id/winNum19" />
+        app:layout_constraintTop_toBottomOf="@+id/nameView" />
 
     <TextView
         android:id="@+id/nameText"
@@ -74,49 +74,15 @@
 
     <Button
         android:id="@+id/sanka_button"
-        android:layout_width="361dp"
+        android:layout_width="360dp"
         android:layout_height="70dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="170dp"
+        android:layout_marginStart="460dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="460dp"
         android:text="出席します。"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/syabanText" />
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
-
-        <TextView
-            android:id="@+id/anatanobanngou"
-            android:layout_width="450dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="45dp"
-            android:textSize="25sp"
-            android:text="あなたの抽選番号は" />
-
-        <TextView
-            android:id="@+id/random_num"
-            android:layout_width="450dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="50dp"
-            android:text=""
-            android:textAlignment="center"
-            android:textSize="35sp"
-            android:textColor="#DB3D36"/>
-
-        <TextView
-            android:id="@+id/desu"
-            android:layout_width="450dp"
-            android:layout_height="66dp"
-            android:layout_marginLeft="45dp"
-            android:text="です"
-            android:textAlignment="viewEnd"
-            android:textSize="25sp" />
-    </LinearLayout>
 
     <Button
         android:id="@+id/back_button_member"
@@ -126,4 +92,41 @@
         android:background="@drawable/back_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="1200dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sanka_button">
+
+        <TextView
+            android:id="@+id/anatanobanngou"
+            android:layout_width="wrap_content"
+            android:layout_height="66dp"
+            android:text=""
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/random_num"
+            android:layout_width="wrap_content"
+            android:layout_height="66dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#DB3D36"
+            android:textSize="45sp" />
+
+        <TextView
+            android:id="@+id/desu"
+            android:layout_width="wrap_content"
+            android:layout_height="66dp"
+            android:text=""
+            android:textAlignment="viewEnd"
+            android:textSize="35sp" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
