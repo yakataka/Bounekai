@@ -17,7 +17,5 @@
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/text_border</item>
 
-
-
     </style>
 </resources>

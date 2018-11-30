@@ -9,29 +9,24 @@
 
     <Spinner
         android:id="@+id/award"
-        android:layout_width="136dp"
-        android:layout_height="33dp"
+        android:layout_width="149dp"
+        android:layout_height="59dp"
+        android:layout_marginLeft="480dp"
+        android:layout_marginTop="180dp"
+        android:entries="@array/award_list"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:entries="@array/award_list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/lottery_button"
         android:layout_width="298dp"
         android:layout_height="105dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginBottom="432dp"
+        android:layout_marginStart="488dp"
+        android:layout_marginBottom="320dp"
         android:text="抽選"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent" />
         <!--app:layout_constraintTop_toBottomOf="@+id/lottery_num" />-->
 
@@ -40,17 +35,11 @@
         android:layout_width="151dp"
         android:layout_height="56dp"
 
-        android:layout_marginStart="431dp"
-        android:layout_marginTop="243dp"
-        android:layout_marginEnd="773dp"
-        android:layout_marginBottom="295dp"
+        android:layout_marginStart="632dp"
+        android:layout_marginTop="180dp"
         android:entries="@array/lottery_num_list"
-        app:layout_constraintBottom_toTopOf="@+id/lottery_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
+        app:layout_constraintTop_toTopOf="parent" />
         <!--app:layout_constraintBottom_toTopOf="@+id/send_button"-->
         <!--app:layout_constraintEnd_toEndOf="parent"-->
         <!--app:layout_constraintHorizontal_bias="0.0"-->
@@ -62,19 +51,11 @@
 
     <Button
         android:id="@+id/send_button"
-        android:layout_width="232dp"
+        android:layout_width="1279dp"
         android:layout_height="61dp"
-        android:layout_marginStart="198dp"
-        android:layout_marginTop="133dp"
-        android:layout_marginEnd="994dp"
-        android:layout_marginBottom="434dp"
         android:text="出欠簿"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lottery_button"
-        app:layout_constraintVertical_bias="0.989" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

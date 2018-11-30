@@ -65,6 +65,7 @@ public class LotteryActivity extends AppCompatActivity {
                 Thread.sleep(1000);
                 lotteryResult.setText(rosterDtoList.get(i).getLotNum());
                 hit_num_array[i] = rosterDtoList.get(i).getLotNum();
+                lotteryResult.postInvalidate();
             }
         } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
