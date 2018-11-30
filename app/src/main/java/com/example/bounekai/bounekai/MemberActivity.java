@@ -41,20 +41,27 @@ public class MemberActivity extends AppCompatActivity {
         TextView kanaName = (TextView)findViewById(R.id.kanaText);
         TextView name = (TextView)findViewById(R.id.nameText);
         TextView syaban = (TextView)findViewById(R.id.syabanText);
-        TextView lotNum = (TextView)findViewById(R.id.random_num);
+        TextView head = (TextView)findViewById(R.id.anatanobanngou);
+        TextView bangou = (TextView)findViewById(R.id.random_num);
+        TextView foot = (TextView)findViewById(R.id.desu);
 
         //受け取った値を表示
         kanaName.setText(info.getKanaName());
         name.setText(info.getName());
         syaban.setText(info.getSyaban());
-        lotNum.setText(info.getLotNum());
+        if (info.getLotNum()!=null){
+            head.setText("あなたの抽選番号は");
+            bangou.setText(info.getLotNum());
+            foot.setText("です");
+        }
 
         Button backButton = findViewById(R.id.back_button_member);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), MemberListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MemberListActivity.class);
                 startActivity(intent);
+                //finish();
             }
         });
 
@@ -134,6 +141,13 @@ public class MemberActivity extends AppCompatActivity {
                     null
             );
             info.setLotNum(Integer.toString(randomNum));
+
+            TextView head = (TextView)findViewById(R.id.anatanobanngou);
+            TextView bangou = (TextView)findViewById(R.id.random_num);
+            TextView foot = (TextView)findViewById(R.id.desu);
+            head.setText("あなたの抽選番号は");
+            bangou.setText(ranNum);
+            foot.setText("です");
         }
     }
 

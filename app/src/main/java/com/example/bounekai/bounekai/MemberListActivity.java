@@ -24,55 +24,9 @@ public class MemberListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_member_list);
-
-        int	i;
-
-        DatabaseOpenHelper openHelper = new DatabaseOpenHelper(this);
-        SQLiteDatabase database = openHelper.getWritableDatabase();
-        //処理
-        Cursor cursor;
-        cursor = database.query(
-                WordContract.Words.TABLE_NAME,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null
-        );
-
-        int numRows = cursor.getCount();
-
-        cursor.moveToFirst();
-
-
-        for( i = 0; i < numRows; i++ ) {
-
-            MemberDto memberDto = new MemberDto();
-            memberDto.setNum(cursor.getInt(0));
-            memberDto.setKanaName(cursor.getString(1));
-            memberDto.setName(cursor.getString(2));
-            memberDto.setSyaban(cursor.getString(3));
-            memberDto.setLotNum(cursor.getString(4));
-            memberDto.setHit(cursor.getInt(5));
-            memberDto.setYotei(cursor.getInt(6));
-            memberDto.setSanka(cursor.getInt(7));
-            memberDto.setMoney(cursor.getInt(8));
-            memberDto.setHage(cursor.getInt(9));
-            list.add(memberDto);
-
-            cursor.moveToNext();
-        }
-
         listView = (ListView) findViewById(R.id.MemberList);
-
-        myAdapter = new MyAdapter(MemberListActivity.this);
-        myAdapter.setMemberList(list);
-        listView.setAdapter(myAdapter);
-
-        cursor.close();
-        database.close();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick (AdapterView < ? > parent, View view,int position, long id){
@@ -81,6 +35,16 @@ public class MemberListActivity extends AppCompatActivity {
                 MemberDto info = list.get(position);
                 intent.putExtra("MemberDto", info);
                 startActivity(intent);
+            }
+        });
+
+        Button backButton = findViewById(R.id.back_button_main);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                //finish();
             }
         });
 
@@ -141,6 +105,55 @@ public class MemberListActivity extends AppCompatActivity {
                 listView.setAdapter(myAdapter);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        int	i;
+
+        DatabaseOpenHelper openHelper = new DatabaseOpenHelper(this);
+        SQLiteDatabase database = openHelper.getWritableDatabase();
+        //処理
+        Cursor cursor;
+        cursor = database.query(
+                WordContract.Words.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        int numRows = cursor.getCount();
+
+        cursor.moveToFirst();
+        for( i = 0; i < numRows; i++ ) {
+
+            MemberDto memberDto = new MemberDto();
+            memberDto.setNum(cursor.getInt(0));
+            memberDto.setKanaName(cursor.getString(1));
+            memberDto.setName(cursor.getString(2));
+            memberDto.setSyaban(cursor.getString(3));
+            memberDto.setLotNum(cursor.getString(4));
+            memberDto.setHit(cursor.getInt(5));
+            memberDto.setYotei(cursor.getInt(6));
+            memberDto.setSanka(cursor.getInt(7));
+            memberDto.setMoney(cursor.getInt(8));
+            memberDto.setHage(cursor.getInt(9));
+            list.add(memberDto);
+
+            cursor.moveToNext();
+        }
+
+        myAdapter = new MyAdapter(MemberListActivity.this);
+        myAdapter.setMemberList(list);
+        listView.setAdapter(myAdapter);
+
+        cursor.close();
+        database.close();
     }
 
 
