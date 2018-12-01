@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,6 +25,9 @@ public class MemberListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        View fullView = getWindow().getDecorView();
+        fullView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         setContentView(R.layout.activity_member_list);
         listView = (ListView) findViewById(R.id.MemberList);
@@ -107,6 +111,31 @@ public class MemberListActivity extends AppCompatActivity {
         });
     }
 
+    public void getSanka() {
+        DatabaseOpenHelper openHelper = new DatabaseOpenHelper(this);
+        SQLiteDatabase database = openHelper.getWritableDatabase();
+        //処理
+        Cursor cursor;
+
+        cursor = database.query(
+                WordContract.Words.TABLE_NAME,
+                null,
+                "sanka_flg = '1'",
+                null,
+                null,
+                null,
+                null
+        );
+
+        int sankaPeople = cursor.getCount();
+
+        TextView sankaTotal = (TextView)findViewById(R.id.sanka_total);
+        sankaTotal.setText(Integer.toString(sankaPeople));
+
+        cursor.close();
+        database.close();
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -117,6 +146,9 @@ public class MemberListActivity extends AppCompatActivity {
         SQLiteDatabase database = openHelper.getWritableDatabase();
         //処理
         Cursor cursor;
+
+        getSanka();
+
         cursor = database.query(
                 WordContract.Words.TABLE_NAME,
                 null,

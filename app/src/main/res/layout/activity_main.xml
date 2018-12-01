@@ -9,37 +9,37 @@
 
     <Spinner
         android:id="@+id/award"
-        android:layout_width="149dp"
+        android:layout_width="180dp"
         android:layout_height="59dp"
-        android:layout_marginLeft="480dp"
-        android:layout_marginTop="180dp"
-        android:entries="@array/award_list"
+        android:layout_marginStart="480dp"
+        android:layout_marginTop="119dp"
+        android:dropDownWidth="match_parent"
         android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/send_button" />
 
     <Button
         android:id="@+id/lottery_button"
-        android:layout_width="298dp"
+        android:layout_width="300dp"
         android:layout_height="105dp"
-        android:layout_marginStart="488dp"
+        android:layout_marginStart="480dp"
         android:layout_marginBottom="320dp"
-        android:text="抽選"
+        android:text="抽選画面へ"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
         <!--app:layout_constraintTop_toBottomOf="@+id/lottery_num" />-->
 
     <Spinner
         android:id="@+id/lottery_num"
-        android:layout_width="151dp"
+        android:layout_width="120dp"
         android:layout_height="56dp"
-
-        android:layout_marginStart="632dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="119dp"
+        android:dropDownWidth="match_parent"
+        android:textAlignment="center"
         android:entries="@array/lottery_num_list"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/award"
+        app:layout_constraintTop_toBottomOf="@+id/send_button" />
         <!--app:layout_constraintBottom_toTopOf="@+id/send_button"-->
         <!--app:layout_constraintEnd_toEndOf="parent"-->
         <!--app:layout_constraintHorizontal_bias="0.0"-->
@@ -54,6 +54,8 @@
         android:layout_width="1279dp"
         android:layout_height="61dp"
         android:text="出欠簿"
+        android:textSize="30sp"
+        android:background="#EEA057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

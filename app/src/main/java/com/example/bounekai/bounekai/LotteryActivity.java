@@ -25,6 +25,11 @@ public class LotteryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lottery);
+
+        //画面を最大にする
+        View fullView = getWindow().getDecorView();
+        fullView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
         Intent intent = getIntent();
         lottery_times = intent.getIntExtra("LOTTERY_TIMES", 0);
         hageFlg = intent.getIntExtra("HAGE", 0);

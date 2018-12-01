@@ -153,5 +153,11 @@
 
     </TableLayout>
 
+    <Button
+        android:id="@+id/back_from_lottery"
+        style="@style/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </android.support.constraint.ConstraintLayout>

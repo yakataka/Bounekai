@@ -46,8 +46,11 @@ public class MyAdapter extends BaseAdapter {
         ((TextView)convertView.findViewById(R.id.name)).setText(memberList.get(position).getName());
         ((TextView)convertView.findViewById(R.id.syaban)).setText(memberList.get(position).getSyaban());
         ((TextView)convertView.findViewById(R.id.sanka)).setText(memberList.get(position).getSanka());
-        ((TextView)convertView.findViewById(R.id.money)).setText(memberList.get(position).getMoney());
-
+        if (memberList.get(position).getLotNum() != null) {
+            ((TextView)convertView.findViewById(R.id.lotNum)).setText(memberList.get(position).getLotNum());
+        } else {
+            ((TextView)convertView.findViewById(R.id.lotNum)).setText("未確定");
+        }
         return convertView;
     }
 }

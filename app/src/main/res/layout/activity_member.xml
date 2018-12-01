@@ -86,10 +86,7 @@
 
     <Button
         android:id="@+id/back_button_member"
-        android:layout_width="190dp"
-        android:layout_height="82dp"
-        android:text="Button"
-        android:background="@drawable/back_button"
+        style="@style/back_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

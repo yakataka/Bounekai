@@ -30,6 +30,9 @@ public class MemberActivity extends AppCompatActivity {
         setContentView(R.layout.activity_member);
         setTitle("");
 
+        View fullView = getWindow().getDecorView();
+        fullView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
         Intent intent = getIntent();
         //MainActivityから値を受け取る
         info = (MemberDto)getIntent().getSerializableExtra("MemberDto" );
