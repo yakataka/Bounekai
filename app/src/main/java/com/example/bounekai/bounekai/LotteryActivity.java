@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -38,8 +39,20 @@ public class LotteryActivity extends AppCompatActivity {
         hageFlg = intent.getIntExtra("HAGE", 0);
 
         String award = intent.getStringExtra("AWARD");
-        Button awardButton = findViewById(R.id.award);
+        final Button awardButton = findViewById(R.id.award);
         awardButton.setText(award);
+        awardButton.setVisibility(View.INVISIBLE);
+
+        final ImageButton imgbt= findViewById(R.id.preAward);
+        imgbt.bringToFront();
+        imgbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imgbt.setVisibility(View.INVISIBLE);
+                awardButton.setVisibility(View.VISIBLE);
+            }
+        });
+
 
         awardButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +70,7 @@ public class LotteryActivity extends AppCompatActivity {
                 //finish();
             }
         });
+
     }
 
     private void lottery(){

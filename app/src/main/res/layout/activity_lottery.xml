@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    style="@style/backGround">
 
     <!--<TextView-->
         <!--android:id="@+id/lottery_result"-->
@@ -19,145 +20,167 @@
         <!--app:layout_constraintHorizontal_bias="0.588"-->
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toTopOf="parent" />-->
-    <Button
-        android:id="@+id/award"
-        android:layout_width="500dp"
-        android:layout_height="116dp"
-        android:gravity="center"
-        android:textSize="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="1089dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.293">
-        <!--app:layout_constraintTop_toBottomOf="@+id/ChanceLottery">-->
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/award"
+            android:layout_width="500dp"
+            android:layout_height="116dp"
+            android:gravity="center"
+            android:textSize="80dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.458"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/back_from_lottery"
+            style="@style/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="573dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.293">
+            <!--app:layout_constraintTop_toBottomOf="@+id/ChanceLottery">-->
 
 
-        <TableRow
-            android:id="@+id/tableRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <TableRow
+                android:id="@+id/tableRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
 
-            <TextView
-                android:id="@+id/winNum1"
-                style="@style/tableNumText" />
+                <TextView
+                    android:id="@+id/winNum1"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum2"
-                style="@style/tableNumText" />
+                <TextView
+                    android:id="@+id/winNum2"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum3"
-                style="@style/tableNumText" />
+                <TextView
+                    android:id="@+id/winNum3"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum4"
-                style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum5"
-                style="@style/tableNumText" />
+                <TextView
+                    android:id="@+id/winNum4"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum6"
-                style="@style/tableNumText" />
+                <TextView
+                    android:id="@+id/winNum5"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum7"
-                style="@style/tableNumText" />
-        </TableRow>
+            </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/winNum8"
-                style="@style/tableNumText" />
+                <TextView
+                    android:id="@+id/winNum6"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum9"
-                style="@style/tableNumText" />
+                <TextView
+                    android:id="@+id/winNum7"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum10"
-                style="@style/tableNumText" />
+                <TextView
+                    android:id="@+id/winNum8"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum11"
-                style="@style/tableNumText" />
+                <TextView
+                    android:id="@+id/winNum9"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum12"
-                style="@style/tableNumText"
-                tools:layout_editor_absoluteX="52dp"
-                tools:layout_editor_absoluteY="130dp" />
+                <TextView
+                    android:id="@+id/winNum10"
+                    style="@style/tableNumText" />
 
-            <TextView
-                android:id="@+id/winNum13"
-                style="@style/tableNumText" />
+                <!--<TextView-->
+                <!--android:id="@+id/winNum11"-->
+                <!--style="@style/tableNumText" />-->
 
-            <TextView
-                android:id="@+id/winNum14"
-                style="@style/tableNumText" />
-        </TableRow>
+                <!--<TextView-->
+                <!--android:id="@+id/winNum12"-->
+                <!--style="@style/tableNumText"-->
+                <!--tools:layout_editor_absoluteX="52dp"-->
+                <!--tools:layout_editor_absoluteY="130dp" />-->
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <!--<TextView-->
+                <!--android:id="@+id/winNum13"-->
+                <!--style="@style/tableNumText" />-->
 
-            <TextView
-                android:id="@+id/winNum15"
-                style="@style/tableNumText" />
+                <!--<TextView-->
+                <!--android:id="@+id/winNum14"-->
+                <!--style="@style/tableNumText" />-->
+            </TableRow>
 
-            <TextView
-                android:id="@+id/winNum16"
-                style="@style/tableNumText" />
-
-            <TextView
-                android:id="@+id/winNum17"
-                style="@style/tableNumText" />
-
-            <TextView
-                android:id="@+id/winNum18"
-                style="@style/tableNumText" />
-
-            <TextView
-                android:id="@+id/winNum19"
-                style="@style/tableNumText" />
-
-            <TextView
-                android:id="@+id/winNum20"
-                style="@style/tableNumText" />
+            <!--<TableRow-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
 
             <!--<TextView-->
-                <!--android:id="@+id/textView8"-->
-                <!--style="@style/tableNumText" />-->
-        </TableRow>
+            <!--android:id="@+id/winNum15"-->
+            <!--style="@style/tableNumText" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/winNum16"-->
+            <!--style="@style/tableNumText" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/winNum17"-->
+            <!--style="@style/tableNumText" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/winNum18"-->
+            <!--style="@style/tableNumText" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/winNum19"-->
+            <!--style="@style/tableNumText" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/winNum20"-->
+            <!--style="@style/tableNumText" />-->
+
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/textView8"&ndash;&gt;-->
+            <!--&lt;!&ndash;style="@style/tableNumText" />&ndash;&gt;-->
+            <!--</TableRow>-->
 
 
-    </TableLayout>
+        </TableLayout>
 
-    <Button
-        android:id="@+id/back_from_lottery"
-        style="@style/back_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/preAward"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/backGround" />
+
+
+    </FrameLayout>
+
 
 
 </android.support.constraint.ConstraintLayout>
