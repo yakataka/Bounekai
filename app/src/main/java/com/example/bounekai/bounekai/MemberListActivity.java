@@ -27,8 +27,10 @@ public class MemberListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         View fullView = getWindow().getDecorView();
-        fullView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
+        fullView.setSystemUiVisibility(
+            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        );
         setContentView(R.layout.activity_member_list);
         listView = (ListView) findViewById(R.id.MemberList);
 

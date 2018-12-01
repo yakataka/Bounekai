@@ -16,8 +16,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         View fullView = getWindow().getDecorView();
-        fullView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
+        fullView.setSystemUiVisibility(
+            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        );
         // Spinner変数にIDを紐づけ
         Spinner awardSpinner = (Spinner) findViewById(R.id.award);
         Spinner lotSpinner = (Spinner) findViewById(R.id.lottery_num);

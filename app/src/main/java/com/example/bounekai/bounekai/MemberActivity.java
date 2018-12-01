@@ -31,8 +31,10 @@ public class MemberActivity extends AppCompatActivity {
         setTitle("");
 
         View fullView = getWindow().getDecorView();
-        fullView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
+        fullView.setSystemUiVisibility(
+            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        );
         Intent intent = getIntent();
         //MainActivityから値を受け取る
         info = (MemberDto)getIntent().getSerializableExtra("MemberDto" );
