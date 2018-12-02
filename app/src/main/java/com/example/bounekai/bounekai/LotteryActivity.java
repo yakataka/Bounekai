@@ -27,6 +27,7 @@ public class LotteryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lottery);
 
@@ -181,12 +182,15 @@ public class LotteryActivity extends AppCompatActivity {
                 String lottery_result = "winNum" + (i + 1);
                 int viewId = getResources().getIdentifier(lottery_result, "id", getPackageName());
                 TextView lotteryResult = findViewById(viewId);
+                Thread.sleep(1000);
                 lotteryResult.setText(rosterDtoList.get(i).getLotNum());
                 hit_num_array[i] = rosterDtoList.get(i).getLotNum();
                 lotteryResult.postInvalidate();
             }
         } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
+        } catch (InterruptedException e1) {
+            e1.printStackTrace();
         }
 
         // 当選フラグ更新

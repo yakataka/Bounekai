@@ -2,6 +2,7 @@
 <!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
 
     <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <solid android:color="#a0ffffff"></solid>
         <stroke android:width="3px" android:color="#000000" />
         <padding android:left="5px" android:top="5px"
             android:right="5px" android:bottom="5px" />
