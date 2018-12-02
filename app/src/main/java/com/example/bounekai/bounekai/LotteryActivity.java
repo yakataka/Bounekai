@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,6 +22,8 @@ public class LotteryActivity extends AppCompatActivity {
     private DatabaseOpenHelper openHelper = new DatabaseOpenHelper(this);
     private int lottery_times;
     private int hageFlg;
+    private int hitFlg;
+    private String award = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +41,32 @@ public class LotteryActivity extends AppCompatActivity {
         lottery_times = intent.getIntExtra("LOTTERY_TIMES", 0);
         hageFlg = intent.getIntExtra("HAGE", 0);
 
-        String award = intent.getStringExtra("AWARD");
-        Button awardButton = findViewById(R.id.award);
+        award = intent.getStringExtra("AWARD");
+        final Button awardButton = findViewById(R.id.award);
         awardButton.setText(award);
+        awardButton.setVisibility(View.INVISIBLE);
+
+        // 背景設定
+        setImage();
+
+        // 使わないTextViewを非表示
+        for (int i = lottery_times; i < 10; i++) {
+            String lottery_result = "winNum" + (i + 1);
+            int viewId = getResources().getIdentifier(lottery_result, "id", getPackageName());
+            TextView lotteryResult = findViewById(viewId);
+            lotteryResult.setVisibility(View.INVISIBLE);
+        }
+
+        final ImageButton imgbt= findViewById(R.id.preAward);
+        imgbt.bringToFront();
+        imgbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imgbt.setVisibility(View.INVISIBLE);
+                awardButton.setVisibility(View.VISIBLE);
+            }
+        });
+
 
         awardButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +84,80 @@ public class LotteryActivity extends AppCompatActivity {
                 //finish();
             }
         });
+
+    }
+
+    private void setImage(){
+        if("5等-3".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk5_3);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk5_3);
+            hitFlg = 53;
+        }
+        else if("5等-2".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk5_2);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk5_2);
+            hitFlg = 52;
+        }
+        else if("5等-1".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk5_1);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk5_1);
+            hitFlg = 51;
+        }
+        else if("4等-4".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk4_4);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk4_4);
+            hitFlg = 44;
+        }
+        else if("4等-3".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk4_3);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk4_3);
+            hitFlg = 43;
+        }
+        else if("4等-2".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk4_2);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk4_2);
+            hitFlg = 42;
+        }
+        else if("4等-1".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk4_1);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk4_1);
+            hitFlg = 41;
+        }
+        else if("3等".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk3_1);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk3_1);
+            hitFlg = 31;
+        }
+        else if("2等-4".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk2_4);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk2_4);
+            hitFlg = 24;
+        }
+        else if("2等-3".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk2_3);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk2_3);
+            hitFlg = 23;
+        }
+        else if("2等-2".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk2_2);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk2_2);
+            hitFlg = 22;
+        }
+        else if("2等-1".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk2_1);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk2_1);
+            hitFlg = 21;
+        }
+        else if("1等-2".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk1_2);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk1_2);
+            hitFlg = 12;
+        }
+        else if("1等-1".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk1_1);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk1_1);
+            hitFlg = 11;
+        }
     }
 
     private void lottery(){
@@ -80,15 +181,12 @@ public class LotteryActivity extends AppCompatActivity {
                 String lottery_result = "winNum" + (i + 1);
                 int viewId = getResources().getIdentifier(lottery_result, "id", getPackageName());
                 TextView lotteryResult = findViewById(viewId);
-                Thread.sleep(1000);
                 lotteryResult.setText(rosterDtoList.get(i).getLotNum());
                 hit_num_array[i] = rosterDtoList.get(i).getLotNum();
                 lotteryResult.postInvalidate();
             }
         } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
-        } catch (InterruptedException e1) {
-            e1.printStackTrace();
         }
 
         // 当選フラグ更新
