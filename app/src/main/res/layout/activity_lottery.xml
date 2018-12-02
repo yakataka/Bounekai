@@ -2,24 +2,25 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    style="@style/backGround">
+    android:layout_height="match_parent">
 
-    <!--<TextView-->
-        <!--android:id="@+id/lottery_result"-->
-        <!--android:layout_width="218dp"-->
-        <!--android:layout_height="97dp"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:textAlignment="center"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintHorizontal_bias="0.588"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent" />-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/back_ground"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/preAward"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop" />
+
     <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -71,7 +72,7 @@
 
 
                 <TextView
-                    android:id="@+id/winNum1"
+                    android:id="@+id/winNum4"
                     style="@style/tableNumText" />
 
                 <TextView
@@ -79,12 +80,12 @@
                     style="@style/tableNumText" />
 
                 <TextView
-                    android:id="@+id/winNum3"
+                    android:id="@+id/winNum1"
                     style="@style/tableNumText" />
 
 
                 <TextView
-                    android:id="@+id/winNum4"
+                    android:id="@+id/winNum3"
                     style="@style/tableNumText" />
 
                 <TextView
@@ -117,66 +118,11 @@
                     android:id="@+id/winNum10"
                     style="@style/tableNumText" />
 
-                <!--<TextView-->
-                <!--android:id="@+id/winNum11"-->
-                <!--style="@style/tableNumText" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/winNum12"-->
-                <!--style="@style/tableNumText"-->
-                <!--tools:layout_editor_absoluteX="52dp"-->
-                <!--tools:layout_editor_absoluteY="130dp" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/winNum13"-->
-                <!--style="@style/tableNumText" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/winNum14"-->
-                <!--style="@style/tableNumText" />-->
             </TableRow>
-
-            <!--<TableRow-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent">-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/winNum15"-->
-            <!--style="@style/tableNumText" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/winNum16"-->
-            <!--style="@style/tableNumText" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/winNum17"-->
-            <!--style="@style/tableNumText" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/winNum18"-->
-            <!--style="@style/tableNumText" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/winNum19"-->
-            <!--style="@style/tableNumText" />-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/winNum20"-->
-            <!--style="@style/tableNumText" />-->
-
-            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
-            <!--&lt;!&ndash;android:id="@+id/textView8"&ndash;&gt;-->
-            <!--&lt;!&ndash;style="@style/tableNumText" />&ndash;&gt;-->
-            <!--</TableRow>-->
-
 
         </TableLayout>
 
-        <ImageButton
-            android:id="@+id/preAward"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/backGround" />
+
 
 
     </FrameLayout>

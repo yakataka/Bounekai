@@ -11,16 +11,11 @@
     <style name="tableNumText">
         <item name="android:layout_width">222dp</item>
         <item name="android:layout_height">220dp</item>
-        <item name="android:text">3</item>
         <item name="android:textSize">50dp</item>
         <item name="android:layout_margin">17dp</item>
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/text_border</item>
 
-    </style>
-
-    <style name="backGround">
-        <item name="android:background">@drawable/sample1</item>
     </style>
 
     <style name="back_button">
