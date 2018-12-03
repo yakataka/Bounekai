@@ -67,10 +67,13 @@ public class LotteryActivity extends AppCompatActivity {
             }
         });
 
+
         awardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 lottery();
+                awardButton.setEnabled(false);
+                awardButton.setBackgroundColor(Color.rgb(192,192,192));
             }
         });
 
@@ -78,9 +81,12 @@ public class LotteryActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                //finish();
             }
         });
+
     }
 
     private void setImage(){
