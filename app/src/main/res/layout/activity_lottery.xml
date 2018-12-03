@@ -37,7 +37,7 @@
             android:gravity="center"
             android:textSize="80dp"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayoutFront"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.458"
             app:layout_constraintStart_toStartOf="parent"
@@ -124,14 +124,13 @@
         </TableLayout>
 
         <ImageButton
-            android:id="@+id/roulette1"
+            android:id="@+id/roulette4"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="159dp"
             tools:layout_editor_absoluteX="509dp"
-            tools:layout_editor_absoluteY="157dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginLeft="40dp"
-            />
+            tools:layout_editor_absoluteY="157dp" />
 
         <ImageButton
             android:id="@+id/roulette2"
@@ -139,29 +138,27 @@
             android:layout_height="180dp"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginLeft="300dp"
+            android:layout_marginTop="159dp"
+            android:layout_marginLeft="293dp"
             />
+
+        <ImageButton
+            android:id="@+id/roulette1"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="550dp"
+            android:layout_marginTop="159dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
 
         <ImageButton
             android:id="@+id/roulette3"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:layout_marginLeft="806dp"
+            android:layout_marginTop="159dp"
             tools:layout_editor_absoluteX="509dp"
-            tools:layout_editor_absoluteY="157dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginLeft="540dp"
-            />
-
-        <ImageButton
-            android:id="@+id/roulette4"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            tools:layout_editor_absoluteX="509dp"
-            tools:layout_editor_absoluteY="157dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginLeft="800dp"
-            />
+            tools:layout_editor_absoluteY="157dp" />
 
         <ImageButton
             android:id="@+id/roulette5"
@@ -169,8 +166,54 @@
             android:layout_height="180dp"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginLeft="1060dp"/>
+            android:layout_marginTop="159dp"
+            android:layout_marginLeft="1062dp"/>
+
+        <ImageButton
+            android:id="@+id/roulette6"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="413dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageButton
+            android:id="@+id/roulette7"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="413dp"
+            android:layout_marginLeft="293dp"
+            />
+
+        <ImageButton
+            android:id="@+id/roulette8"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="550dp"
+            android:layout_marginTop="413dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageButton
+            android:id="@+id/roulette9"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="806dp"
+            android:layout_marginTop="413dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageButton
+            android:id="@+id/roulette10"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="413dp"
+            android:layout_marginLeft="1062dp"/>
 
 
     </FrameLayout>

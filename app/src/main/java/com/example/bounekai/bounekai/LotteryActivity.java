@@ -43,8 +43,6 @@ public class LotteryActivity extends AppCompatActivity {
             View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
         );
 
-        rouletteStart();
-
         Intent intent = getIntent();
         lottery_times = intent.getIntExtra("LOTTERY_TIMES", 0);
         hageFlg = intent.getIntExtra("HAGE", 0);
@@ -57,11 +55,22 @@ public class LotteryActivity extends AppCompatActivity {
         // 背景設定
         setImage();
 
-        // 使わないTextViewを非表示
+        // gifスタート
+        rouletteStart();
+
+        // 使わないTextViewとgifを非表示
         for (int i = lottery_times; i < 10; i++) {
             String lottery_result = "winNum" + (i + 1);
             int viewId = getResources().getIdentifier(lottery_result, "id", getPackageName());
             TextView lotteryResult = findViewById(viewId);
+            lotteryResult.setVisibility(View.INVISIBLE);
+        }
+
+        // 使わないgifを非表示
+        for (int i = lottery_times; i < 10; i++) {
+            String lottery_result = "roulette" + (i + 1);
+            int viewId = getResources().getIdentifier(lottery_result, "id", getPackageName());
+            ImageButton lotteryResult = findViewById(viewId);
             lotteryResult.setVisibility(View.INVISIBLE);
         }
 
@@ -76,17 +85,21 @@ public class LotteryActivity extends AppCompatActivity {
         });
 
 
-        awardButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (beforeLot) {
-                    lottery();
-                    beforeLot = false;
-                    awardButton.setEnabled(false);
-                    awardButton.setBackgroundColor(Color.rgb(192, 192, 192));
-                }
-            }
-        });
+        if (beforeLot) {
+            lottery();
+            beforeLot = false;
+        }
+//        awardButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (beforeLot) {
+//                    lottery();
+//                    beforeLot = false;
+//                    awardButton.setEnabled(false);
+//                    awardButton.setBackgroundColor(Color.rgb(192, 192, 192));
+//                }
+//            }
+//        });
 
         Button backButton = findViewById(R.id.back_from_lottery);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -171,6 +184,26 @@ public class LotteryActivity extends AppCompatActivity {
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk1_1);
             hitFlg = 11;
         }
+        else if("特別賞-4".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bkex_4);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bkex_4);
+            hitFlg = 104;
+        }
+        else if("特別賞-3".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bkex_3);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bkex_3);
+            hitFlg = 103;
+        }
+        else if("特別賞-2".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bkex_3);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bkex_3);
+            hitFlg = 102;
+        }
+        else if("特別賞-1".equals(award)) {
+            ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bkex_3);
+            ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bkex_3);
+            hitFlg = 101;
+        }
     }
 
     private void lottery(){
@@ -246,7 +279,6 @@ public class LotteryActivity extends AppCompatActivity {
                         new String[]{hit_num_array[i]}
                 );
             }
-
         } finally {
             db.close();
         }
@@ -275,14 +307,91 @@ public class LotteryActivity extends AppCompatActivity {
             }
         });
 
-        // 2
-        final ImageButton roulette3 = findViewById(R.id.roulette3);
-        GlideDrawableImageViewTarget target3 = new GlideDrawableImageViewTarget(roulette3);
+        // 3
+        final ImageButton roulette8 = findViewById(R.id.roulette8);
+        GlideDrawableImageViewTarget target3 = new GlideDrawableImageViewTarget(roulette8);
         Glide.with(this).load(R.raw.roulette_1).into(target3);
+        roulette8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette8.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 4
+        final ImageButton roulette4 = findViewById(R.id.roulette4);
+        GlideDrawableImageViewTarget target4 = new GlideDrawableImageViewTarget(roulette4);
+        Glide.with(this).load(R.raw.roulette_1).into(target4);
+        roulette4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette4.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 5
+        final ImageButton roulette5 = findViewById(R.id.roulette5);
+        GlideDrawableImageViewTarget target5 = new GlideDrawableImageViewTarget(roulette5);
+        Glide.with(this).load(R.raw.roulette_1).into(target5);
+        roulette5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette5.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 6
+        final ImageButton roulette6 = findViewById(R.id.roulette6);
+        GlideDrawableImageViewTarget target6 = new GlideDrawableImageViewTarget(roulette6);
+        Glide.with(this).load(R.raw.roulette_1).into(target1);
+        roulette6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette6.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 7
+        final ImageButton roulette7 = findViewById(R.id.roulette7);
+        GlideDrawableImageViewTarget target7 = new GlideDrawableImageViewTarget(roulette7);
+        Glide.with(this).load(R.raw.roulette_1).into(target7);
+        roulette7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette7.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 8
+        final ImageButton roulette3 = findViewById(R.id.roulette3);
+        GlideDrawableImageViewTarget target8 = new GlideDrawableImageViewTarget(roulette3);
+        Glide.with(this).load(R.raw.roulette_1).into(target8);
         roulette3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 roulette3.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 9
+        final ImageButton roulette9 = findViewById(R.id.roulette9);
+        GlideDrawableImageViewTarget target9 = new GlideDrawableImageViewTarget(roulette9);
+        Glide.with(this).load(R.raw.roulette_1).into(target9);
+        roulette9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette9.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 10
+        final ImageButton roulette10 = findViewById(R.id.roulette10);
+        GlideDrawableImageViewTarget target10 = new GlideDrawableImageViewTarget(roulette10);
+        Glide.with(this).load(R.raw.roulette_1).into(target10);
+        roulette10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette10.setVisibility(View.INVISIBLE);
             }
         });
     }

@@ -29,7 +29,7 @@ public class ResultActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.ResultList);
 
         list.add(new String[]{"0", "1等ｰ1"});
-        awardAdd("hit_flg = '1'");
+        awardAdd("hit_flg = '11'");
 
         list.add(new String[]{"0", "1等ｰ2"});
         awardAdd("hit_flg = '12'");
