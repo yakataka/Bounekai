@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -69,10 +70,13 @@ public class LotteryActivity extends AppCompatActivity {
         });
 
 
-        awardButton.setOnClickListener(new View.OnClickListener() {
+        awardButton.setOnClickListener(
+                new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 lottery();
+                awardButton.setEnabled(false);
+                awardButton.setBackgroundColor(Color.rgb(192,192,192));
             }
         });
 
