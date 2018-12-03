@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -20,6 +21,12 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/back_from_lottery"
+        style="@style/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:layout_width="0dp"
@@ -44,14 +51,8 @@
             app:layout_constraintVertical_bias="1.0"
             android:layout_gravity="center_horizontal" />
 
-        <Button
-            android:id="@+id/back_from_lottery"
-            style="@style/back_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TableLayout
-            android:id="@+id/tableLayout"
+            android:id="@+id/tableLayoutFront"
             android:layout_width="fill_parent"
             android:layout_height="573dp"
             android:layout_marginTop="120dp"
@@ -62,14 +63,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.293">
-            <!--app:layout_constraintTop_toBottomOf="@+id/ChanceLottery">-->
-
 
             <TableRow
                 android:id="@+id/tableRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
 
                 <TextView
                     android:id="@+id/winNum4"
@@ -82,7 +80,6 @@
                 <TextView
                     android:id="@+id/winNum1"
                     style="@style/tableNumText" />
-
 
                 <TextView
                     android:id="@+id/winNum3"
@@ -122,7 +119,54 @@
 
         </TableLayout>
 
+        <ImageButton
+            android:id="@+id/roulette1"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="40dp"
+            />
 
+        <ImageButton
+            android:id="@+id/roulette2"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="300dp"
+            />
+
+        <ImageButton
+            android:id="@+id/roulette3"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="540dp"
+            />
+
+        <ImageButton
+            android:id="@+id/roulette4"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="800dp"
+            />
+
+        <ImageButton
+            android:id="@+id/roulette5"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="1060dp"/>
 
 
     </FrameLayout>

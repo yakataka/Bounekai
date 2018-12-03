@@ -13,6 +13,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -24,6 +27,7 @@ public class LotteryActivity extends AppCompatActivity {
     private int hageFlg;
     private int hitFlg;
     private String award = "";
+    private boolean beforeLot = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,8 @@ public class LotteryActivity extends AppCompatActivity {
             View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|
             View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
         );
+
+        rouletteStart();
 
         Intent intent = getIntent();
         lottery_times = intent.getIntExtra("LOTTERY_TIMES", 0);
@@ -72,11 +78,15 @@ public class LotteryActivity extends AppCompatActivity {
         awardButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lottery();
+                if (beforeLot) {
+                    lottery();
+                    beforeLot = false;
+                }
             }
         });
 
         Button backButton = findViewById(R.id.back_from_lottery);
+        backButton.setVisibility(View.INVISIBLE);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -182,15 +192,12 @@ public class LotteryActivity extends AppCompatActivity {
                 String lottery_result = "winNum" + (i + 1);
                 int viewId = getResources().getIdentifier(lottery_result, "id", getPackageName());
                 TextView lotteryResult = findViewById(viewId);
-                Thread.sleep(1000);
                 lotteryResult.setText(rosterDtoList.get(i).getLotNum());
                 hit_num_array[i] = rosterDtoList.get(i).getLotNum();
                 lotteryResult.postInvalidate();
             }
         } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
-        } catch (InterruptedException e1) {
-            e1.printStackTrace();
         }
 
         // 当選フラグ更新
@@ -228,7 +235,7 @@ public class LotteryActivity extends AppCompatActivity {
         SQLiteDatabase db = openHelper.getWritableDatabase();
         try {
             ContentValues cv = new ContentValues();
-            cv.put("hit_flg", 1);
+            cv.put("hit_flg", hitFlg);
             for (int i = 0; i < hit_num_array.length; i++) {
                 db.update(
                         WordContract.Words.TABLE_NAME,
@@ -241,6 +248,41 @@ public class LotteryActivity extends AppCompatActivity {
         } finally {
             db.close();
         }
+    }
+
+    private void rouletteStart() {
+        // 1
+        final ImageButton roulette1 = findViewById(R.id.roulette1);
+        GlideDrawableImageViewTarget target1 = new GlideDrawableImageViewTarget(roulette1);
+        Glide.with(this).load(R.raw.roulette_1).into(target1);
+        roulette1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette1.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 2
+        final ImageButton roulette2 = findViewById(R.id.roulette2);
+        GlideDrawableImageViewTarget target2 = new GlideDrawableImageViewTarget(roulette2);
+        Glide.with(this).load(R.raw.roulette_1).into(target2);
+        roulette2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette2.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        // 2
+        final ImageButton roulette3 = findViewById(R.id.roulette3);
+        GlideDrawableImageViewTarget target3 = new GlideDrawableImageViewTarget(roulette3);
+        Glide.with(this).load(R.raw.roulette_1).into(target3);
+        roulette3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roulette3.setVisibility(View.INVISIBLE);
+            }
+        });
     }
 
     // 開発用 全参加フラグON
