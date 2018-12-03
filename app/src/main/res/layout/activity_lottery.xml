@@ -22,12 +22,6 @@
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop" />
 
-    <Button
-        android:id="@+id/back_from_lottery"
-        style="@style/back_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -51,6 +45,12 @@
             app:layout_constraintVertical_bias="1.0"
             android:layout_gravity="center_horizontal" />
 
+        <Button
+            android:id="@+id/back_from_lottery"
+            style="@style/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TableLayout
             android:id="@+id/tableLayoutFront"
             android:layout_width="fill_parent"
@@ -63,11 +63,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.293">
+            <!--app:layout_constraintTop_toBottomOf="@+id/ChanceLottery">-->
+
 
             <TableRow
                 android:id="@+id/tableRow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
 
                 <TextView
                     android:id="@+id/winNum4"
@@ -80,6 +83,7 @@
                 <TextView
                     android:id="@+id/winNum1"
                     style="@style/tableNumText" />
+
 
                 <TextView
                     android:id="@+id/winNum3"
