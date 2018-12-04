@@ -52,8 +52,8 @@ public class LotteryActivity extends AppCompatActivity {
         //画面を最大にする
         View fullView = getWindow().getDecorView();
         fullView.setSystemUiVisibility(
-            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|
-            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
         );
 
         Intent intent = getIntent();
@@ -87,7 +87,7 @@ public class LotteryActivity extends AppCompatActivity {
             lotteryResult.setVisibility(View.INVISIBLE);
         }
 
-        final ImageButton imgbt= findViewById(R.id.preAward);
+        final ImageButton imgbt = findViewById(R.id.preAward);
         imgbt.bringToFront();
         imgbt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,113 +111,96 @@ public class LotteryActivity extends AppCompatActivity {
         });
 
         for (int i = 1; i <= lottery_times; i++) {
-            if (i==1)loop1();
-            if (i==2)loop2();
-            if (i==3)loop3();
-            if (i==4)loop4();
-            if (i==5)loop5();
-            if (i==6)loop6();
-            if (i==7)loop7();
-            if (i==8)loop8();
-            if (i==9)loop9();
-            if (i==10)loop10();
+            if (i == 1) loop1();
+            if (i == 2) loop2();
+            if (i == 3) loop3();
+            if (i == 4) loop4();
+            if (i == 5) loop5();
+            if (i == 6) loop6();
+            if (i == 7) loop7();
+            if (i == 8) loop8();
+            if (i == 9) loop9();
+            if (i == 10) loop10();
         }
     }
 
-    private void setImage(){
-        if("5等-3".equals(award)) {
+    private void setImage() {
+        if ("5等-3".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk5_3);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk5_3);
             hitFlg = 53;
-        }
-        else if("5等-2".equals(award)) {
+        } else if ("5等-2".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk5_2);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk5_2);
             hitFlg = 52;
-        }
-        else if("5等-1".equals(award)) {
+        } else if ("5等-1".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk5_1);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk5_1);
             hitFlg = 51;
-        }
-        else if("4等-4".equals(award)) {
+        } else if ("4等-4".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk4_4);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk4_4);
             hitFlg = 44;
-        }
-        else if("4等-3".equals(award)) {
+        } else if ("4等-3".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk4_3);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk4_3);
             hitFlg = 43;
-        }
-        else if("4等-2".equals(award)) {
+        } else if ("4等-2".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk4_2);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk4_2);
             hitFlg = 42;
-        }
-        else if("4等-1".equals(award)) {
+        } else if ("4等-1".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk4_1);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk4_1);
             hitFlg = 41;
-        }
-        else if("3等".equals(award)) {
+        } else if ("3等".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk3_1);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk3_1);
             hitFlg = 31;
-        }
-        else if("2等-4".equals(award)) {
+        } else if ("2等-4".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk2_4);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk2_4);
             hitFlg = 24;
-        }
-        else if("2等-3".equals(award)) {
+        } else if ("2等-3".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk2_3);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk2_3);
             hitFlg = 23;
-        }
-        else if("2等-2".equals(award)) {
+        } else if ("2等-2".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk2_2);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk2_2);
             hitFlg = 22;
-        }
-        else if("2等-1".equals(award)) {
+        } else if ("2等-1".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk2_1);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk2_1);
             hitFlg = 21;
-        }
-        else if("1等-2".equals(award)) {
+        } else if ("1等-2".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk1_2);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk1_2);
             hitFlg = 12;
-        }
-        else if("1等-1".equals(award)) {
+        } else if ("1等-1".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bk1_1);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bk1_1);
             hitFlg = 11;
-        }
-        else if("特別賞-4".equals(award)) {
+        } else if ("特別賞-4".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bkex_4);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bkex_4);
             hitFlg = 104;
-        }
-        else if("特別賞-3".equals(award)) {
+        } else if ("特別賞-3".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bkex_3);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bkex_3);
             hitFlg = 103;
-        }
-        else if("特別賞-2".equals(award)) {
+        } else if ("特別賞-2".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bkex_3);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bkex_3);
             hitFlg = 102;
-        }
-        else if("特別賞-1".equals(award)) {
+        } else if ("特別賞-1".equals(award)) {
             ((ImageView) findViewById(R.id.back_ground)).setImageResource(R.drawable.bkex_3);
             ((ImageView) findViewById(R.id.preAward)).setImageResource(R.drawable.bkex_3);
             hitFlg = 101;
         }
     }
 
-    private void lottery(){
+    private void lottery() {
         String[] hit_num_array = new String[lottery_times];
 
 //        // TODO 開発用
@@ -257,7 +240,7 @@ public class LotteryActivity extends AppCompatActivity {
                     WordContract.Words.TABLE_NAME,
                     null,
                     "sanka_flg = ? AND hit_flg = ? AND hage_flg = ?",
-                    new String[]{"1","0","0"},
+                    new String[]{"1", "0", "0"},
                     null,
                     null,
                     null
@@ -273,8 +256,8 @@ public class LotteryActivity extends AppCompatActivity {
             // シャッフル
             Collections.shuffle(DtoList);
 
-            if(DtoList.size() < lottery_times - 1) {
-                while(DtoList.size() < lottery_times) {
+            if (DtoList.size() < lottery_times - 1) {
+                while (DtoList.size() < lottery_times) {
                     RosterDto rosterDto = new RosterDto();
                     rosterDto.setLotNum("");
                     DtoList.add(rosterDto);
@@ -295,7 +278,7 @@ public class LotteryActivity extends AppCompatActivity {
                     WordContract.Words.TABLE_NAME,
                     null,
                     "sanka_flg = ? AND hit_flg = ? AND hage_flg = ?",
-                    new String[]{"1","0","1"},
+                    new String[]{"1", "0", "1"},
                     null,
                     null,
                     null
@@ -309,7 +292,7 @@ public class LotteryActivity extends AppCompatActivity {
                 hageDtoList.add(rosterDto);
             }
 
-            if(hageDtoList.size() > 1) {
+            if (hageDtoList.size() > 1) {
                 // 長山さんと藤田さんの順番入れ替え
                 RosterDto tempDto = hageDtoList.get(1);
                 hageDtoList.remove(1);
@@ -350,7 +333,7 @@ public class LotteryActivity extends AppCompatActivity {
         roulette1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum1=false;
+                ranNum1 = false;
                 roulette1.setVisibility(View.INVISIBLE);
             }
         });
@@ -360,7 +343,7 @@ public class LotteryActivity extends AppCompatActivity {
         roulette2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum2=false;
+                ranNum2 = false;
                 roulette2.setVisibility(View.INVISIBLE);
             }
         });
@@ -370,7 +353,7 @@ public class LotteryActivity extends AppCompatActivity {
         roulette3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum3=false;
+                ranNum3 = false;
                 roulette3.setVisibility(View.INVISIBLE);
             }
         });
@@ -380,7 +363,7 @@ public class LotteryActivity extends AppCompatActivity {
         roulette4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum4=false;
+                ranNum4 = false;
                 roulette4.setVisibility(View.INVISIBLE);
             }
         });
@@ -390,7 +373,7 @@ public class LotteryActivity extends AppCompatActivity {
         roulette5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum5=false;
+                ranNum5 = false;
                 roulette5.setVisibility(View.INVISIBLE);
             }
         });
@@ -400,7 +383,7 @@ public class LotteryActivity extends AppCompatActivity {
         roulette6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum6=false;
+                ranNum6 = false;
                 roulette6.setVisibility(View.INVISIBLE);
             }
         });
@@ -410,7 +393,7 @@ public class LotteryActivity extends AppCompatActivity {
         roulette7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum7=false;
+                ranNum7 = false;
                 roulette7.setVisibility(View.INVISIBLE);
             }
         });
@@ -420,7 +403,7 @@ public class LotteryActivity extends AppCompatActivity {
         roulette8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum8=false;
+                ranNum8 = false;
                 roulette8.setVisibility(View.INVISIBLE);
             }
         });
@@ -430,7 +413,7 @@ public class LotteryActivity extends AppCompatActivity {
         roulette9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum9=false;
+                ranNum9 = false;
                 roulette9.setVisibility(View.INVISIBLE);
             }
         });
@@ -440,11 +423,12 @@ public class LotteryActivity extends AppCompatActivity {
         roulette10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ranNum10=false;
+                ranNum10 = false;
                 roulette10.setVisibility(View.INVISIBLE);
             }
         });
-    }}
+    }
+
 
     private void loop1() {
         final Handler handler = new Handler();
@@ -472,6 +456,7 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+
     private void loop2() {
         final Handler handler = new Handler();
         final Button roulette1 = findViewById(R.id.roulette2);
@@ -498,6 +483,7 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+
     private void loop3() {
         final Handler handler = new Handler();
         final Button roulette1 = findViewById(R.id.roulette3);
@@ -524,6 +510,7 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+
     private void loop4() {
         final Handler handler = new Handler();
         final Button roulette1 = findViewById(R.id.roulette4);
@@ -550,6 +537,7 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+
     private void loop5() {
         final Handler handler = new Handler();
         final Button roulette1 = findViewById(R.id.roulette5);
@@ -576,6 +564,7 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+
     private void loop6() {
         final Handler handler = new Handler();
         final Button roulette1 = findViewById(R.id.roulette6);
@@ -602,6 +591,7 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+
     private void loop7() {
         final Handler handler = new Handler();
         final Button roulette1 = findViewById(R.id.roulette7);
@@ -628,6 +618,7 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+
     private void loop8() {
         final Handler handler = new Handler();
         final Button roulette1 = findViewById(R.id.roulette8);
@@ -654,6 +645,7 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+
     private void loop9() {
         final Handler handler = new Handler();
         final Button roulette1 = findViewById(R.id.roulette9);
@@ -680,6 +672,7 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+
     private void loop10() {
         final Handler handler = new Handler();
         final Button roulette1 = findViewById(R.id.roulette10);
@@ -706,6 +699,8 @@ public class LotteryActivity extends AppCompatActivity {
             }
         }).start();
     }
+}
+
 
     // 開発用 全参加フラグON
 //    private void updateAllSankaFlg() {
