@@ -113,7 +113,7 @@ public class MemberListActivity extends AppCompatActivity {
         });
 
         Button sankaButton = findViewById(R.id.syussekiha);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        sankaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getSanka();
