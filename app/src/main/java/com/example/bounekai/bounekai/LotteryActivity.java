@@ -30,7 +30,6 @@ public class LotteryActivity extends AppCompatActivity {
     private int hageFlg;
     private int hitFlg;
     private String award = "";
-    private boolean beforeLot = true;
 
     private boolean ranNum1 = true;
     private boolean ranNum2 = true;
@@ -98,22 +97,8 @@ public class LotteryActivity extends AppCompatActivity {
             }
         });
 
-
-        if (beforeLot) {
-            lottery();
-            beforeLot = false;
-        }
-//        awardButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (beforeLot) {
-//                    lottery();
-//                    beforeLot = false;
-//                    awardButton.setEnabled(false);
-//                    awardButton.setBackgroundColor(Color.rgb(192, 192, 192));
-//                }
-//            }
-//        });
+        // 抽選処理
+        lottery();
 
         Button backButton = findViewById(R.id.back_from_lottery);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -235,18 +220,16 @@ public class LotteryActivity extends AppCompatActivity {
     private void lottery(){
         String[] hit_num_array = new String[lottery_times];
 
-        // TODO 開発用
-        updateAllSankaFlg();
+//        // TODO 開発用
+//        updateAllSankaFlg();
 
         // 抽選対象取得
-        if (hageFlg == 1) {
+        if ("特別賞-4".equals(award)) {
             // はげフラグonのときのselect文
+            rosterDtoList = selectHageLotteryTarget();
         } else {
             rosterDtoList = selectLotteryTarget();
         }
-
-        // シャッフル
-        Collections.shuffle(rosterDtoList);
 
         try {
             for (int i = 0; i < lottery_times; i++) {
@@ -267,6 +250,7 @@ public class LotteryActivity extends AppCompatActivity {
 
     private ArrayList<RosterDto> selectLotteryTarget() {
         SQLiteDatabase db = openHelper.getWritableDatabase();
+        ArrayList<RosterDto> DtoList = new ArrayList<>();
         try {
             Cursor cursor;
             cursor = db.query(
@@ -284,12 +268,62 @@ public class LotteryActivity extends AppCompatActivity {
             for (int i = 0; i < numRows; i++, cursor.moveToNext()) {
                 RosterDto rosterDto = new RosterDto();
                 rosterDto.setLotNum(cursor.getString(4));
-                rosterDtoList.add(rosterDto);
+                DtoList.add(rosterDto);
+            }
+            // シャッフル
+            Collections.shuffle(DtoList);
+
+            if(DtoList.size() < lottery_times - 1) {
+                while(DtoList.size() < lottery_times) {
+                    RosterDto rosterDto = new RosterDto();
+                    rosterDto.setLotNum("");
+                    DtoList.add(rosterDto);
+                }
             }
         } finally {
             db.close();
         }
-        return rosterDtoList;
+        return DtoList;
+    }
+
+    private ArrayList<RosterDto> selectHageLotteryTarget() {
+        SQLiteDatabase db = openHelper.getWritableDatabase();
+        ArrayList<RosterDto> hageDtoList = new ArrayList<>();
+        try {
+            Cursor cursor;
+            cursor = db.query(
+                    WordContract.Words.TABLE_NAME,
+                    null,
+                    "sanka_flg = ? AND hit_flg = ? AND hage_flg = ?",
+                    new String[]{"1","0","1"},
+                    null,
+                    null,
+                    null
+            );
+            int numRows = cursor.getCount();
+
+            cursor.moveToFirst();
+            for (int i = 0; i < numRows; i++, cursor.moveToNext()) {
+                RosterDto rosterDto = new RosterDto();
+                rosterDto.setLotNum(cursor.getString(4));
+                hageDtoList.add(rosterDto);
+            }
+
+            if(hageDtoList.size() > 1) {
+                // 長山さんと藤田さんの順番入れ替え
+                RosterDto tempDto = hageDtoList.get(1);
+                hageDtoList.remove(1);
+                hageDtoList.add(tempDto);
+            }
+
+            // 後ろに普通に抽選した人を加える
+            ArrayList<RosterDto> tempDtoList = selectLotteryTarget();
+            hageDtoList.addAll(tempDtoList);
+
+        } finally {
+            db.close();
+        }
+        return hageDtoList;
     }
 
     private void updateLotteryTarget(String[] hit_num_array) {
@@ -410,7 +444,7 @@ public class LotteryActivity extends AppCompatActivity {
                 roulette10.setVisibility(View.INVISIBLE);
             }
         });
-    }
+    }}
 
     private void loop1() {
         final Handler handler = new Handler();
@@ -674,22 +708,21 @@ public class LotteryActivity extends AppCompatActivity {
     }
 
     // 開発用 全参加フラグON
-    private void updateAllSankaFlg() {
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        try {
-            ContentValues cv = new ContentValues();
-            cv.put("sanka_flg", 1);
-            for (int i = 0; i < 126; i++) {
-                cv.put("lot_num", i + 1);
-                db.update(
-                        WordContract.Words.TABLE_NAME,
-                        cv,
-                        "num = ?",
-                        new String[]{String.valueOf(i + 1)}
-                );
-            }
-        } finally {
-            db.close();
-        }
-    }
-}
+//    private void updateAllSankaFlg() {
+//        SQLiteDatabase db = openHelper.getWritableDatabase();
+//        try {
+//            ContentValues cv = new ContentValues();
+//            cv.put("sanka_flg", 1);
+//            for (int i = 0; i < 126; i++) {
+//                cv.put("lot_num", i + 1);
+//                db.update(
+//                        WordContract.Words.TABLE_NAME,
+//                        cv,
+//                        "num = ?",
+//                        new String[]{String.valueOf(i + 1)}
+//                );}
+//            }
+//        } finally {
+//            db.close();
+//        }
+//    }
