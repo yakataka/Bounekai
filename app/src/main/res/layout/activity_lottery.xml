@@ -123,93 +123,123 @@
 
         </TableLayout>
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette4"
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:layout_marginLeft="37dp"
             android:layout_marginTop="159dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette2"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp"
             android:layout_marginTop="159dp"
             android:layout_marginLeft="293dp"
             />
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette1"
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:layout_marginLeft="550dp"
             android:layout_marginTop="159dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette3"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_marginLeft="806dp"
             android:layout_marginTop="159dp"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette5"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp"
             android:layout_marginTop="159dp"
             android:layout_marginLeft="1062dp"/>
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette6"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_marginLeft="37dp"
             android:layout_marginTop="413dp"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette7"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp"
             android:layout_marginTop="413dp"
             android:layout_marginLeft="293dp"
             />
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette8"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_marginLeft="550dp"
             android:layout_marginTop="413dp"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette9"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_marginLeft="806dp"
             android:layout_marginTop="413dp"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp" />
 
-        <ImageButton
+        <Button
             android:id="@+id/roulette10"
             android:layout_width="180dp"
             android:layout_height="180dp"
+            android:textSize="80dp"
+            android:background="#ffffff"
+            style="@style/Widget.AppCompat.Button.Borderless"
             tools:layout_editor_absoluteX="509dp"
             tools:layout_editor_absoluteY="157dp"
             android:layout_marginTop="413dp"

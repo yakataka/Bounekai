@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class LotteryActivity extends AppCompatActivity {
 
@@ -29,6 +31,18 @@ public class LotteryActivity extends AppCompatActivity {
     private int hitFlg;
     private String award = "";
     private boolean beforeLot = true;
+
+    private boolean ranNum1 = true;
+    private boolean ranNum2 = true;
+    private boolean ranNum3 = true;
+    private boolean ranNum4 = true;
+    private boolean ranNum5 = true;
+    private boolean ranNum6 = true;
+    private boolean ranNum7 = true;
+    private boolean ranNum8 = true;
+    private boolean ranNum9 = true;
+    private boolean ranNum10 = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +84,7 @@ public class LotteryActivity extends AppCompatActivity {
         for (int i = lottery_times; i < 10; i++) {
             String lottery_result = "roulette" + (i + 1);
             int viewId = getResources().getIdentifier(lottery_result, "id", getPackageName());
-            ImageButton lotteryResult = findViewById(viewId);
+            Button lotteryResult = findViewById(viewId);
             lotteryResult.setVisibility(View.INVISIBLE);
         }
 
@@ -111,6 +125,18 @@ public class LotteryActivity extends AppCompatActivity {
             }
         });
 
+        for (int i = 1; i <= lottery_times; i++) {
+            if (i==1)loop1();
+            if (i==2)loop2();
+            if (i==3)loop3();
+            if (i==4)loop4();
+            if (i==5)loop5();
+            if (i==6)loop6();
+            if (i==7)loop7();
+            if (i==8)loop8();
+            if (i==9)loop9();
+            if (i==10)loop10();
+        }
     }
 
     private void setImage(){
@@ -286,114 +312,365 @@ public class LotteryActivity extends AppCompatActivity {
 
     private void rouletteStart() {
         // 1
-        final ImageButton roulette1 = findViewById(R.id.roulette1);
-        GlideDrawableImageViewTarget target1 = new GlideDrawableImageViewTarget(roulette1);
-        Glide.with(this).load(R.raw.roulette_1).into(target1);
+        final Button roulette1 = findViewById(R.id.roulette1);
         roulette1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ranNum1=false;
                 roulette1.setVisibility(View.INVISIBLE);
             }
         });
 
         // 2
-        final ImageButton roulette2 = findViewById(R.id.roulette2);
-        GlideDrawableImageViewTarget target2 = new GlideDrawableImageViewTarget(roulette2);
-        Glide.with(this).load(R.raw.roulette_1).into(target2);
+        final Button roulette2 = findViewById(R.id.roulette2);
         roulette2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ranNum2=false;
                 roulette2.setVisibility(View.INVISIBLE);
             }
         });
 
         // 3
-        final ImageButton roulette8 = findViewById(R.id.roulette8);
-        GlideDrawableImageViewTarget target3 = new GlideDrawableImageViewTarget(roulette8);
-        Glide.with(this).load(R.raw.roulette_1).into(target3);
-        roulette8.setOnClickListener(new View.OnClickListener() {
+        final Button roulette3 = findViewById(R.id.roulette3);
+        roulette3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                roulette8.setVisibility(View.INVISIBLE);
+                ranNum3=false;
+                roulette3.setVisibility(View.INVISIBLE);
             }
         });
 
         // 4
-        final ImageButton roulette4 = findViewById(R.id.roulette4);
-        GlideDrawableImageViewTarget target4 = new GlideDrawableImageViewTarget(roulette4);
-        Glide.with(this).load(R.raw.roulette_1).into(target4);
+        final Button roulette4 = findViewById(R.id.roulette4);
         roulette4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ranNum4=false;
                 roulette4.setVisibility(View.INVISIBLE);
             }
         });
 
         // 5
-        final ImageButton roulette5 = findViewById(R.id.roulette5);
-        GlideDrawableImageViewTarget target5 = new GlideDrawableImageViewTarget(roulette5);
-        Glide.with(this).load(R.raw.roulette_1).into(target5);
+        final Button roulette5 = findViewById(R.id.roulette5);
         roulette5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ranNum5=false;
                 roulette5.setVisibility(View.INVISIBLE);
             }
         });
 
         // 6
-        final ImageButton roulette6 = findViewById(R.id.roulette6);
-        GlideDrawableImageViewTarget target6 = new GlideDrawableImageViewTarget(roulette6);
-        Glide.with(this).load(R.raw.roulette_1).into(target1);
+        final Button roulette6 = findViewById(R.id.roulette6);
         roulette6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ranNum6=false;
                 roulette6.setVisibility(View.INVISIBLE);
             }
         });
 
         // 7
-        final ImageButton roulette7 = findViewById(R.id.roulette7);
-        GlideDrawableImageViewTarget target7 = new GlideDrawableImageViewTarget(roulette7);
-        Glide.with(this).load(R.raw.roulette_1).into(target7);
+        final Button roulette7 = findViewById(R.id.roulette7);
         roulette7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ranNum7=false;
                 roulette7.setVisibility(View.INVISIBLE);
             }
         });
 
         // 8
-        final ImageButton roulette3 = findViewById(R.id.roulette3);
-        GlideDrawableImageViewTarget target8 = new GlideDrawableImageViewTarget(roulette3);
-        Glide.with(this).load(R.raw.roulette_1).into(target8);
-        roulette3.setOnClickListener(new View.OnClickListener() {
+        final Button roulette8 = findViewById(R.id.roulette8);
+        roulette8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                roulette3.setVisibility(View.INVISIBLE);
+                ranNum8=false;
+                roulette8.setVisibility(View.INVISIBLE);
             }
         });
 
         // 9
-        final ImageButton roulette9 = findViewById(R.id.roulette9);
-        GlideDrawableImageViewTarget target9 = new GlideDrawableImageViewTarget(roulette9);
-        Glide.with(this).load(R.raw.roulette_1).into(target9);
+        final Button roulette9 = findViewById(R.id.roulette9);
         roulette9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ranNum9=false;
                 roulette9.setVisibility(View.INVISIBLE);
             }
         });
 
         // 10
-        final ImageButton roulette10 = findViewById(R.id.roulette10);
-        GlideDrawableImageViewTarget target10 = new GlideDrawableImageViewTarget(roulette10);
-        Glide.with(this).load(R.raw.roulette_1).into(target10);
+        final Button roulette10 = findViewById(R.id.roulette10);
         roulette10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ranNum10=false;
                 roulette10.setVisibility(View.INVISIBLE);
             }
         });
+    }
+
+    private void loop1() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette1);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum1);
+            }
+        }).start();
+    }
+    private void loop2() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette2);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum2);
+            }
+        }).start();
+    }
+    private void loop3() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette3);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum3);
+            }
+        }).start();
+    }
+    private void loop4() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette4);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum4);
+            }
+        }).start();
+    }
+    private void loop5() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette5);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum5);
+            }
+        }).start();
+    }
+    private void loop6() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette6);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum6);
+            }
+        }).start();
+    }
+    private void loop7() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette7);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum7);
+            }
+        }).start();
+    }
+    private void loop8() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette8);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum8);
+            }
+        }).start();
+    }
+    private void loop9() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette9);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum9);
+            }
+        }).start();
+    }
+    private void loop10() {
+        final Handler handler = new Handler();
+        final Button roulette1 = findViewById(R.id.roulette10);
+        // 別スレッドを実行
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                do {
+                    // Handlerを使用してメイン(UI)スレッドに処理を依頼する
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            String ranNum;
+                            ranNum = Integer.toString(ThreadLocalRandom.current().nextInt(100, 1000));
+                            roulette1.setText(ranNum);
+                        }
+                    });
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (ranNum10);
+            }
+        }).start();
     }
 
     // 開発用 全参加フラグON
