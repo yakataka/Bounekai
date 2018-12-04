@@ -194,8 +194,8 @@ public class LotteryActivity extends AppCompatActivity {
     private void lottery(){
         String[] hit_num_array = new String[lottery_times];
 
-        // TODO 開発用
-        updateAllSankaFlg();
+//        // TODO 開発用
+//        updateAllSankaFlg();
 
         // 抽選対象取得
         if ("特別賞-4".equals(award)) {
@@ -428,25 +428,24 @@ public class LotteryActivity extends AppCompatActivity {
                 roulette10.setVisibility(View.INVISIBLE);
             }
         });
-    }
+    }}
 
     // 開発用 全参加フラグON
-    private void updateAllSankaFlg() {
-        SQLiteDatabase db = openHelper.getWritableDatabase();
-        try {
-            ContentValues cv = new ContentValues();
-            cv.put("sanka_flg", 1);
-            for (int i = 0; i < 126; i++) {
-                cv.put("lot_num", i + 1);
-                db.update(
-                        WordContract.Words.TABLE_NAME,
-                        cv,
-                        "num = ?",
-                        new String[]{String.valueOf(i + 1)}
-                );
-            }
-        } finally {
-            db.close();
-        }
-    }
-}
+//    private void updateAllSankaFlg() {
+//        SQLiteDatabase db = openHelper.getWritableDatabase();
+//        try {
+//            ContentValues cv = new ContentValues();
+//            cv.put("sanka_flg", 1);
+//            for (int i = 0; i < 126; i++) {
+//                cv.put("lot_num", i + 1);
+//                db.update(
+//                        WordContract.Words.TABLE_NAME,
+//                        cv,
+//                        "num = ?",
+//                        new String[]{String.valueOf(i + 1)}
+//                );}
+//            }
+//        } finally {
+//            db.close();
+//        }
+//    }
