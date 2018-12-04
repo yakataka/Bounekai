@@ -44,12 +44,12 @@ public class MemberListActivity extends AppCompatActivity {
             }
         });
 
-        Button backButton = findViewById(R.id.back_button_main);
+        Button backButton = findViewById(R.id.back_from_memberlist);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent2);
                 //finish();
             }
         });
@@ -113,7 +113,7 @@ public class MemberListActivity extends AppCompatActivity {
         });
 
         Button sankaButton = findViewById(R.id.syussekiha);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        sankaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getSanka();

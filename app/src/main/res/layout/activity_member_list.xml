@@ -150,7 +150,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/back_button_main"
+        android:id="@+id/back_from_memberlist"
         style="@style/back_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
