@@ -90,7 +90,7 @@ INSERT INTO Member (num, kana_name, name, syain_num, lot_num, hit_flg, sanka_yot
 INSERT INTO Member (num, kana_name, name, syain_num, lot_num, hit_flg, sanka_yotei_flg, sanka_flg, money_flg, hage_flg)  VALUES (90, null, null, '211049', null, 0, 1,0, 0, 0);/
 INSERT INTO Member (num, kana_name, name, syain_num, lot_num, hit_flg, sanka_yotei_flg, sanka_flg, money_flg, hage_flg)  VALUES (91, null, null, '203069', null, 0, 1,0, 0, 0);/
 INSERT INTO Member (num, kana_name, name, syain_num, lot_num, hit_flg, sanka_yotei_flg, sanka_flg, money_flg, hage_flg)  VALUES (92, null, null, '208063', null, 0, 0,0, 0, 0);/
-INSERT INTO Member (num, kana_name, name, syain_num, lot_num, hit_flg, sanka_yotei_flg, sanka_flg, money_flg, hage_flg)  VALUES (93, null, null, '205056', null, 0, 1,0, 0, 0);/
+INSERT INTO Member (num, kana_name, name, syain_num, lot_num, hit_flg, sanka_yotei_flg, sanka_flg, money_flg, hage_flg)  VALUES (93, null, null, '205056', null, 0, 1,0, 0, 1);/
 INSERT INTO Member (num, kana_name, name, syain_num, lot_num, hit_flg, sanka_yotei_flg, sanka_flg, money_flg, hage_flg)  VALUES (94, null, null, '218062', null, 0, 1,0, 0, 0);/
 INSERT INTO Member (num, kana_name, name, syain_num, lot_num, hit_flg, sanka_yotei_flg, sanka_flg, money_flg, hage_flg)  VALUES (95, null, null, '209052', null, 0, 1,0, 0, 0);/
 INSERT INTO Member (num, kana_name, name, syain_num, lot_num, hit_flg, sanka_yotei_flg, sanka_flg, money_flg, hage_flg)  VALUES (96, null, null, '404051', null, 0, 0,0, 0, 0);/
