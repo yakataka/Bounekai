@@ -9,10 +9,10 @@
 
     <Spinner
         android:id="@+id/award"
-        android:layout_width="180dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="480dp"
-        android:layout_marginTop="119dp"
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="460dp"
+        android:layout_marginTop="120dp"
         android:dropDownWidth="match_parent"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,24 +20,22 @@
 
     <Button
         android:id="@+id/lottery_button"
-        android:layout_width="300dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="480dp"
-        android:layout_marginBottom="320dp"
+        android:layout_width="360dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="460dp"
         android:text="抽選画面へ"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="50sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/award" />
         <!--app:layout_constraintTop_toBottomOf="@+id/lottery_num" />-->
 
     <Spinner
         android:id="@+id/lottery_num"
         android:layout_width="120dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="119dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="120dp"
         android:dropDownWidth="match_parent"
         android:textAlignment="center"
-        android:entries="@array/lottery_num_list"
         app:layout_constraintStart_toEndOf="@+id/award"
         app:layout_constraintTop_toBottomOf="@+id/send_button" />
         <!--app:layout_constraintBottom_toTopOf="@+id/send_button"-->
