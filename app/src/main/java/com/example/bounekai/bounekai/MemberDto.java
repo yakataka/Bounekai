@@ -1,11 +1,14 @@
 package com.example.bounekai.bounekai;
 
-public class MemberDto {
+import java.io.Serializable;
+
+public class MemberDto implements Serializable {
 
     private int num;
     private String kanaName;
     private String name;
     private String syaban;
+    private String lotNum;
     private int yotei;
     private int sanka;
     private int money;
@@ -46,6 +49,14 @@ public class MemberDto {
         return syaban;
     }
 
+    public void setLotNum(String lotNum) {
+        this.lotNum = lotNum;
+    }
+
+    public String getLotNum() {
+        return lotNum;
+    }
+
     public void setYotei(int yotei) {
         this.yotei = yotei;
     }
@@ -56,6 +67,10 @@ public class MemberDto {
 
     public void setSanka(int sanka) {
         this.sanka = sanka;
+    }
+
+    public int getSankaFlg() {
+        return sanka;
     }
 
     public String getSanka() {
@@ -72,6 +87,10 @@ public class MemberDto {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public int getMoneyFlg() {
+        return money;
     }
 
     public String getMoney() {

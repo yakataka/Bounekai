@@ -6,18 +6,218 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/lottery_result"
-        android:layout_width="218dp"
-        android:layout_height="97dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:textAlignment="center"
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/back_ground"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop" />
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/preAward"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/award"
+            android:layout_width="500dp"
+            android:layout_height="116dp"
+            android:gravity="center"
+            android:textSize="80dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayoutFront"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.458"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/back_from_lottery"
+            style="@style/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:id="@+id/tableLayoutFront"
+            android:layout_width="fill_parent"
+            android:layout_height="573dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.293">
+            <!--app:layout_constraintTop_toBottomOf="@+id/ChanceLottery">-->
+
+
+            <TableRow
+                android:id="@+id/tableRow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/winNum4"
+                    style="@style/tableNumText" />
+
+                <TextView
+                    android:id="@+id/winNum2"
+                    style="@style/tableNumText" />
+
+                <TextView
+                    android:id="@+id/winNum1"
+                    style="@style/tableNumText" />
+
+
+                <TextView
+                    android:id="@+id/winNum3"
+                    style="@style/tableNumText" />
+
+                <TextView
+                    android:id="@+id/winNum5"
+                    style="@style/tableNumText" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/winNum6"
+                    style="@style/tableNumText" />
+
+                <TextView
+                    android:id="@+id/winNum7"
+                    style="@style/tableNumText" />
+
+                <TextView
+                    android:id="@+id/winNum8"
+                    style="@style/tableNumText" />
+
+                <TextView
+                    android:id="@+id/winNum9"
+                    style="@style/tableNumText" />
+
+                <TextView
+                    android:id="@+id/winNum10"
+                    style="@style/tableNumText" />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <ImageButton
+            android:id="@+id/roulette4"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="159dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageButton
+            android:id="@+id/roulette2"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="159dp"
+            android:layout_marginLeft="293dp"
+            />
+
+        <ImageButton
+            android:id="@+id/roulette1"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="550dp"
+            android:layout_marginTop="159dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageButton
+            android:id="@+id/roulette3"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="806dp"
+            android:layout_marginTop="159dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageButton
+            android:id="@+id/roulette5"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="159dp"
+            android:layout_marginLeft="1062dp"/>
+
+        <ImageButton
+            android:id="@+id/roulette6"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="413dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageButton
+            android:id="@+id/roulette7"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="413dp"
+            android:layout_marginLeft="293dp"
+            />
+
+        <ImageButton
+            android:id="@+id/roulette8"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="550dp"
+            android:layout_marginTop="413dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageButton
+            android:id="@+id/roulette9"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="806dp"
+            android:layout_marginTop="413dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <ImageButton
+            android:id="@+id/roulette10"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:layout_editor_absoluteX="509dp"
+            tools:layout_editor_absoluteY="157dp"
+            android:layout_marginTop="413dp"
+            android:layout_marginLeft="1062dp"/>
+
+
+    </FrameLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>

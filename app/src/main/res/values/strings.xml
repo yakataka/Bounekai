@@ -13,4 +13,35 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+
+    <string-array name="award_list">
+        <item>5等-3</item>  <!-- めぐリズム -->
+        <item>5等-2</item>  <!-- 珪藻土マット -->
+        <item>5等-1</item>  <!-- コーディアル -->
+        <item>4等-4</item>  <!-- LUSHセット -->
+        <item>4等-3</item>  <!-- 本 -->
+        <item>4等-2</item>  <!-- 茅乃舎のセット -->
+        <item>4等-1</item>  <!-- ラーメンセット -->
+        <item>3等</item>    <!-- お酒とおつまみ -->
+        <item>2等-3</item>  <!-- アロマディフューザー -->
+        <item>2等-2</item>  <!-- AIスピーカー -->
+        <item>2等-1</item>  <!-- 蟹カタログ -->
+        <item>1等-2</item>  <!-- コーヒーメーカー -->
+        <item>1等-1</item>  <!-- お肉カタログ -->
+        <item>特別賞-4</item>  <!-- 育毛剤 -->
+        <item>特別賞-3</item>  <!-- フライパン -->
+        <item>特別賞-2</item>  <!-- TDRチケット -->
+        <item>特別賞-1</item>  <!-- フジQチケット -->
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>-</item>
+        <item>当日賞</item>
+    </string-array>
 </resources>
